@@ -1,0 +1,515 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Voice Notes – User guide</title>
+<meta name="description" content="How to use Voice Notes: Speak to Tasks. Speak your to-dos and turn them into organized tasks with dates and reminders.">
+<style>
+:root{
+  --brand:#4f5bd5; --brand-ink:#ffffff; --bg:#f4f4f9; --card:#ffffff; --ink:#1b1d26; --muted:#5e6272;
+  --line:#e3e4ee; --soft:#eceefc; --warn-bg:#fff6e5; --warn-line:#f0d49a;
+}
+@media (prefers-color-scheme: dark){
+  :root{ --brand:#6d78ea; --bg:#111219; --card:#1b1c26; --ink:#e9eaf2; --muted:#9c9fb2;
+    --line:#2c2e3c; --soft:#1f2240; --warn-bg:#2b2416; --warn-line:#5c4a22; }
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans Arabic",sans-serif}
+a{color:var(--brand)}
+header{background:linear-gradient(135deg,#3f6fe0,#6a4fd0);color:var(--brand-ink);padding:28px 16px 64px}
+.wrap{max-width:760px;margin:0 auto}
+.top{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.home{color:var(--brand-ink);text-decoration:none;font-size:14px;opacity:.9}
+select{font:inherit;font-size:14px;padding:6px 10px;border-radius:8px;border:0;background:rgba(255,255,255,.18);color:#fff}
+select option{color:#111}
+h1{font-size:30px;line-height:1.2;margin:22px 0 8px}
+header p{margin:0;opacity:.92;max-width:600px}
+main{padding:0 16px 48px;margin-top:-40px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px 22px;margin:0 0 16px}
+.card h2{font-size:20px;margin:0 0 10px;display:flex;gap:10px;align-items:baseline}
+.num{flex:none;display:inline-grid;place-items:center;width:28px;height:28px;border-radius:50%;background:var(--soft);color:var(--brand);font-size:14px;font-weight:700}
+.card h3{font-size:16px;margin:16px 0 4px}
+.card p{margin:0 0 10px}
+ul,ol{margin:0 0 10px;padding-inline-start:22px}
+li{margin:4px 0}
+.quick{background:var(--soft);border-color:transparent}
+.quick ol{font-weight:600}
+.ui{font-weight:600}
+.say{font-style:italic}
+.tip{border-inline-start:3px solid var(--brand);padding:6px 12px;background:var(--soft);border-radius:0 8px 8px 0;margin:10px 0 0}
+[dir=rtl] .tip{border-radius:8px 0 0 8px}
+.warn{background:var(--warn-bg);border-color:var(--warn-line)}
+dl{margin:0}
+dt{font-weight:700;margin-top:12px}
+dd{margin:2px 0 0}
+nav.toc{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 16px}
+nav.toc a{font-size:14px;text-decoration:none;background:var(--card);border:1px solid var(--line);padding:6px 12px;border-radius:999px;color:var(--ink)}
+footer{color:var(--muted);font-size:14px;text-align:center;padding:8px 16px 40px}
+.btn{display:inline-block;background:var(--brand);color:#fff;text-decoration:none;padding:10px 16px;border-radius:10px;font-weight:600;margin:6px 8px 0 0}
+section[hidden]{display:none}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <div class="top">
+      <a class="home" href="../">Green Pixel Studio</a>
+      <select id="lang" aria-label="Language">
+        <option value="en">English</option>
+        <option value="pt">Português</option>
+        <option value="es">Español</option>
+        <option value="fr">Français</option>
+        <option value="ar">العربية</option>
+      </select>
+    </div>
+    <h1 id="h1">How to use Voice Notes</h1>
+    <p id="lead"></p>
+  </div>
+</header>
+<main class="wrap">
+
+<!-- ===================== ENGLISH ===================== -->
+<section data-lang="en" data-title="How to use Voice Notes" data-lead="Voice Notes turns what you say into organized tasks with dates, times and reminders. Everything happens on your iPhone: no typing, no account, no cloud.">
+  <div class="card quick">
+    <h2>Quick start</h2>
+    <ol><li>Tap the microphone.</li><li>Speak naturally.</li><li>Review your tasks and tap Save.</li></ol>
+    <p>Try: <span class="say">"Call the dentist tomorrow at 2pm and buy groceries next Friday."</span></p>
+  </div>
+  <nav class="toc">
+    <a href="#en-1">First launch</a><a href="#en-2">Capture</a><a href="#en-3">Review</a><a href="#en-4">Dates &amp; times</a><a href="#en-5">Your lists</a><a href="#en-6">Reminders</a><a href="#en-7">Settings</a><a href="#en-8">Privacy</a><a href="#en-9">Questions</a>
+  </nav>
+  <div class="card" id="en-1"><h2><span class="num">1</span>First launch</h2>
+    <p>There's no account or sign-in. The first time you tap the microphone, iOS asks for <b>Microphone</b> and <b>Speech Recognition</b> access. Allow both so the app can hear you and turn your voice into text.</p>
+    <p>To get reminders, also allow notifications when asked.</p></div>
+  <div class="card" id="en-2"><h2><span class="num">2</span>Capture by voice</h2>
+    <p>Tap the microphone button and choose a mode:</p>
+    <ul>
+      <li><b>Quick Task:</b> say one thing and save it in seconds.</li>
+      <li><b>Brain Dump:</b> talk through everything on your mind. The app splits it into separate tasks.</li>
+    </ul>
+    <p>While you speak you'll see a live waveform and a timer. You can pause and resume. When you're done, tap <span class="ui">Finish</span>.</p>
+    <p class="tip">Speak the way you normally would. Saying a date or time with each task ("…on Monday", "…at 10") lets the app schedule it for you.</p></div>
+  <div class="card" id="en-3"><h2><span class="num">3</span>Review before saving</h2>
+    <p>Nothing is saved until you confirm. On the review screen you can:</p>
+    <ul>
+      <li>Edit any task's text, date or time.</li>
+      <li>Split a capture into separate tasks, or keep it as a single note.</li>
+      <li>Merge related tasks into one.</li>
+      <li>Check highlighted items. The app highlights anything it's less sure about, and it catches impossible or past dates.</li>
+    </ul>
+    <p>When everything looks right, tap <span class="ui">Save</span>.</p></div>
+  <div class="card" id="en-4"><h2><span class="num">4</span>Dates and times it understands</h2>
+    <ul>
+      <li><b>Dates:</b> <span class="say">tomorrow, next Friday, the 15th, March 15, end of the month</span></li>
+      <li><b>Times:</b> <span class="say">at 10, 2pm, this evening</span></li>
+    </ul>
+    <p>A task without a date goes to your <span class="ui">Inbox</span>, so you can schedule it later.</p></div>
+  <div class="card" id="en-5"><h2><span class="num">5</span>Today, Upcoming and Inbox</h2>
+    <ul>
+      <li><b>Today:</b> overdue tasks and tasks due today, in one place. Overdue tasks are shown in red.</li>
+      <li><b>Upcoming:</b> future tasks, grouped by month. They move into Today automatically when their day arrives.</li>
+      <li><b>Inbox:</b> tasks without a date, ready to schedule.</li>
+    </ul>
+    <h3>Working with tasks</h3>
+    <ul>
+      <li>Tap the <b>circle</b> to complete a task.</li>
+      <li>Tap the <b>pencil</b> to edit or reschedule it.</li>
+    </ul></div>
+  <div class="card" id="en-6"><h2><span class="num">6</span>Reminders</h2>
+    <ul>
+      <li><b>Tasks with a time:</b> reminders the day before, 2 hours before, and at the time.</li>
+      <li><b>Tasks with only a date:</b> a reminder the day before.</li>
+    </ul>
+    <p>You can change reminder timing in Settings. Reminders are scheduled on your iPhone, so they work offline.</p>
+    <p class="tip">Not getting reminders? Check that notifications are allowed for Voice Notes in the iPhone Settings app.</p></div>
+  <div class="card" id="en-7"><h2><span class="num">7</span>Settings</h2>
+    <ul>
+      <li><b>Theme:</b> light, dark or system.</li>
+      <li><b>Language:</b> English, Portuguese, Spanish, French or Arabic. You can speak and capture in any of them.</li>
+      <li><b>Reminders:</b> choose when you're reminded.</li>
+      <li><b>Recordings:</b> choose to delete recordings after they're processed.</li>
+      <li><b>Export your data:</b> save all your tasks to a file you control.</li>
+      <li><b>Delete all data:</b> permanently erase everything in the app.</li>
+      <li><b>Ad privacy choices:</b> change your ad consent (EEA and UK).</li>
+      <li><b>Remove Ads:</b> a one-time purchase. Restore it after reinstalling or on a new iPhone.</li>
+    </ul></div>
+  <div class="card" id="en-8"><h2><span class="num">8</span>Private by design</h2>
+    <p>Speech recognition and task extraction run on your iPhone. On devices that support Apple Intelligence, on-device AI turns your speech into tasks. On other iPhones, a built-in extractor does the job, so every feature still works. <span class="ui">Settings › Privacy</span> shows which one your iPhone uses.</p>
+    <p>There's no account and no server. Your voice and tasks never leave your phone. Read the <a href="../voice-to-task-privacy/">privacy policy</a>.</p></div>
+  <div class="card" id="en-9"><h2><span class="num">9</span>Questions</h2>
+    <dl>
+      <dt>The app didn't catch a date correctly.</dt><dd>Fix it on the review screen before saving, or tap the pencil on the task later. Saying the date right after the task ("buy milk tomorrow") helps.</dd>
+      <dt>The microphone doesn't work.</dt><dd>Open the iPhone Settings app, find Voice Notes, and turn on Microphone and Speech Recognition.</dd>
+      <dt>Can I use it offline?</dt><dd>Yes. Capturing, saving and reminders all work on your iPhone. Ads need a connection.</dd>
+      <dt>What happens if I delete the app?</dt><dd>Your tasks are deleted with it. Export your data first if you want to keep a copy.</dd>
+      <dt>I bought Remove Ads but see ads again.</dt><dd>Use the restore option next to Remove Ads in Settings, signed in with the same Apple ID.</dd>
+    </dl></div>
+  <div class="card"><h2>Need help?</h2>
+    <p>Email <a href="mailto:nur.uudevs@gmail.com">nur.uudevs@gmail.com</a>.</p>
+    <a class="btn" href="https://apps.apple.com/app/id6819695641">Download on the App Store</a></div>
+</section>
+
+<!-- ===================== PORTUGUÊS ===================== -->
+<section data-lang="pt" hidden data-title="Como usar o Voice Notes" data-lead="O Voice Notes transforma o que diz em tarefas organizadas com datas, horas e lembretes. Tudo acontece no seu iPhone: sem escrever, sem conta, sem nuvem.">
+  <div class="card quick">
+    <h2>Início rápido</h2>
+    <ol><li>Toque no microfone.</li><li>Fale naturalmente.</li><li>Reveja as tarefas e toque em Guardar.</li></ol>
+    <p>Experimente: <span class="say">«Ligar ao dentista amanhã às 14h e comprar mercearia na próxima sexta-feira.»</span></p>
+  </div>
+  <nav class="toc">
+    <a href="#pt-1">Primeira utilização</a><a href="#pt-2">Gravar</a><a href="#pt-3">Rever</a><a href="#pt-4">Datas e horas</a><a href="#pt-5">As suas listas</a><a href="#pt-6">Lembretes</a><a href="#pt-7">Definições</a><a href="#pt-8">Privacidade</a><a href="#pt-9">Perguntas</a>
+  </nav>
+  <div class="card" id="pt-1"><h2><span class="num">1</span>Primeira utilização</h2>
+    <p>Não há conta nem início de sessão. Na primeira vez que tocar no microfone, o iOS pede acesso ao <b>Microfone</b> e ao <b>Reconhecimento de voz</b>. Permita ambos para que a app o possa ouvir e converter a sua voz em texto.</p>
+    <p>Para receber lembretes, permita também as notificações quando lhe for pedido.</p></div>
+  <div class="card" id="pt-2"><h2><span class="num">2</span>Grave com a voz</h2>
+    <p>Toque no botão do microfone e escolha um modo:</p>
+    <ul>
+      <li><b>Tarefa rápida:</b> diga uma coisa e guarde-a em segundos.</li>
+      <li><b>Despejo de ideias:</b> fale sobre tudo o que tem em mente. A app divide tudo em tarefas separadas.</li>
+    </ul>
+    <p>Enquanto fala, vê uma onda sonora e um temporizador em direto. Pode pausar e retomar. Quando terminar, toque em <span class="ui">Concluir</span>.</p>
+    <p class="tip">Fale como faria normalmente. Dizer uma data ou hora com cada tarefa («…na segunda-feira», «…às 10») permite à app agendá-la por si.</p></div>
+  <div class="card" id="pt-3"><h2><span class="num">3</span>Reveja antes de guardar</h2>
+    <p>Nada é guardado até confirmar. No ecrã de revisão pode:</p>
+    <ul>
+      <li>Editar o texto, a data ou a hora de qualquer tarefa.</li>
+      <li>Dividir uma gravação em tarefas separadas, ou mantê-la como uma única nota.</li>
+      <li>Juntar tarefas relacionadas numa só.</li>
+      <li>Verificar os itens destacados. A app destaca o que tem menos certeza e deteta datas impossíveis ou passadas.</li>
+    </ul>
+    <p>Quando tudo estiver certo, toque em <span class="ui">Guardar</span>.</p></div>
+  <div class="card" id="pt-4"><h2><span class="num">4</span>Datas e horas que entende</h2>
+    <ul>
+      <li><b>Datas:</b> <span class="say">amanhã, próxima sexta-feira, dia 15, 15 de março, fim do mês</span></li>
+      <li><b>Horas:</b> <span class="say">às 10, 14h, esta noite</span></li>
+    </ul>
+    <p>Uma tarefa sem data vai para a <span class="ui">Caixa de entrada</span>, para a agendar mais tarde.</p></div>
+  <div class="card" id="pt-5"><h2><span class="num">5</span>Hoje, Próximas e Caixa de entrada</h2>
+    <ul>
+      <li><b>Hoje:</b> tarefas em atraso e tarefas para hoje, num só sítio. As tarefas em atraso aparecem a vermelho.</li>
+      <li><b>Próximas:</b> tarefas futuras, agrupadas por mês. Passam automaticamente para Hoje quando chega o dia.</li>
+      <li><b>Caixa de entrada:</b> tarefas sem data, prontas a agendar.</li>
+    </ul>
+    <h3>Gerir tarefas</h3>
+    <ul>
+      <li>Toque no <b>círculo</b> para concluir uma tarefa.</li>
+      <li>Toque no <b>lápis</b> para a editar ou reagendar.</li>
+    </ul></div>
+  <div class="card" id="pt-6"><h2><span class="num">6</span>Lembretes</h2>
+    <ul>
+      <li><b>Tarefas com hora:</b> lembretes na véspera, 2 horas antes e à hora marcada.</li>
+      <li><b>Tarefas só com data:</b> um lembrete na véspera.</li>
+    </ul>
+    <p>Pode alterar quando é lembrado nas Definições. Os lembretes são agendados no seu iPhone, por isso funcionam offline.</p>
+    <p class="tip">Não recebe lembretes? Confirme que as notificações estão permitidas para o Voice Notes na app Definições do iPhone.</p></div>
+  <div class="card" id="pt-7"><h2><span class="num">7</span>Definições</h2>
+    <ul>
+      <li><b>Tema:</b> claro, escuro ou do sistema.</li>
+      <li><b>Idioma:</b> inglês, português, espanhol, francês ou árabe. Pode falar e gravar em qualquer um deles.</li>
+      <li><b>Lembretes:</b> escolha quando é lembrado.</li>
+      <li><b>Gravações:</b> opte por apagar as gravações depois de processadas.</li>
+      <li><b>Exportar os seus dados:</b> guarde todas as tarefas num ficheiro que controla.</li>
+      <li><b>Apagar todos os dados:</b> apaga permanentemente tudo na app.</li>
+      <li><b>Opções de privacidade de anúncios:</b> altere o consentimento de anúncios (EEE e Reino Unido).</li>
+      <li><b>Remover anúncios:</b> compra única. Restaure-a após reinstalar ou num iPhone novo.</li>
+    </ul></div>
+  <div class="card" id="pt-8"><h2><span class="num">8</span>Privacidade desde a conceção</h2>
+    <p>O reconhecimento de voz e a extração de tarefas acontecem no seu iPhone. Em dispositivos com Apple Intelligence, a IA no dispositivo transforma a sua voz em tarefas. Nos outros iPhones, um extrator integrado faz o trabalho, por isso todas as funções continuam a funcionar. Em <span class="ui">Definições › Privacidade</span> vê qual o seu iPhone usa.</p>
+    <p>Não há conta nem servidor. A sua voz e as suas tarefas nunca saem do telemóvel. Leia a <a href="../voice-to-task-privacy/">política de privacidade</a>.</p></div>
+  <div class="card" id="pt-9"><h2><span class="num">9</span>Perguntas</h2>
+    <dl>
+      <dt>A app não percebeu bem uma data.</dt><dd>Corrija-a no ecrã de revisão antes de guardar, ou toque mais tarde no lápis da tarefa. Dizer a data logo a seguir à tarefa («comprar leite amanhã») ajuda.</dd>
+      <dt>O microfone não funciona.</dt><dd>Abra a app Definições do iPhone, encontre o Voice Notes e ative o Microfone e o Reconhecimento de voz.</dd>
+      <dt>Posso usar offline?</dt><dd>Sim. Gravar, guardar e os lembretes funcionam no iPhone. Os anúncios precisam de ligação.</dd>
+      <dt>O que acontece se apagar a app?</dt><dd>As suas tarefas são apagadas com ela. Exporte os dados primeiro se quiser guardar uma cópia.</dd>
+      <dt>Comprei Remover anúncios mas voltei a ver anúncios.</dt><dd>Use a opção de restaurar junto a Remover anúncios nas Definições, com o mesmo ID Apple.</dd>
+    </dl></div>
+  <div class="card"><h2>Precisa de ajuda?</h2>
+    <p>Envie um email para <a href="mailto:nur.uudevs@gmail.com">nur.uudevs@gmail.com</a>.</p>
+    <a class="btn" href="https://apps.apple.com/app/id6819695641">Descarregar na App Store</a></div>
+</section>
+
+<!-- ===================== ESPAÑOL ===================== -->
+<section data-lang="es" hidden data-title="Cómo usar Voice Notes" data-lead="Voice Notes convierte lo que dices en tareas organizadas con fechas, horas y recordatorios. Todo ocurre en tu iPhone: sin escribir, sin cuenta, sin nube.">
+  <div class="card quick">
+    <h2>Inicio rápido</h2>
+    <ol><li>Toca el micrófono.</li><li>Habla con naturalidad.</li><li>Revisa tus tareas y toca Guardar.</li></ol>
+    <p>Prueba: <span class="say">«Llamar al dentista mañana a las 2 de la tarde y hacer la compra el próximo viernes.»</span></p>
+  </div>
+  <nav class="toc">
+    <a href="#es-1">Primer uso</a><a href="#es-2">Capturar</a><a href="#es-3">Revisar</a><a href="#es-4">Fechas y horas</a><a href="#es-5">Tus listas</a><a href="#es-6">Recordatorios</a><a href="#es-7">Ajustes</a><a href="#es-8">Privacidad</a><a href="#es-9">Preguntas</a>
+  </nav>
+  <div class="card" id="es-1"><h2><span class="num">1</span>Primer uso</h2>
+    <p>No hay cuenta ni inicio de sesión. La primera vez que toques el micrófono, iOS te pedirá acceso al <b>Micrófono</b> y al <b>Reconocimiento de voz</b>. Permite ambos para que la app pueda oírte y convertir tu voz en texto.</p>
+    <p>Para recibir recordatorios, permite también las notificaciones cuando se te pida.</p></div>
+  <div class="card" id="es-2"><h2><span class="num">2</span>Captura con la voz</h2>
+    <p>Toca el botón del micrófono y elige un modo:</p>
+    <ul>
+      <li><b>Tarea rápida:</b> di una cosa y guárdala en segundos.</li>
+      <li><b>Volcado mental:</b> habla de todo lo que tienes en mente. La app lo divide en tareas separadas.</li>
+    </ul>
+    <p>Mientras hablas verás una onda de audio y un temporizador en directo. Puedes pausar y reanudar. Cuando termines, toca <span class="ui">Terminar</span>.</p>
+    <p class="tip">Habla como lo harías normalmente. Si dices una fecha u hora con cada tarea («…el lunes», «…a las 10»), la app la programa por ti.</p></div>
+  <div class="card" id="es-3"><h2><span class="num">3</span>Revisa antes de guardar</h2>
+    <p>No se guarda nada hasta que lo confirmas. En la pantalla de revisión puedes:</p>
+    <ul>
+      <li>Editar el texto, la fecha o la hora de cualquier tarea.</li>
+      <li>Dividir una captura en tareas separadas o mantenerla como una sola nota.</li>
+      <li>Unir tareas relacionadas en una.</li>
+      <li>Revisar los elementos resaltados. La app resalta lo que no tiene tan claro y detecta fechas imposibles o pasadas.</li>
+    </ul>
+    <p>Cuando todo esté bien, toca <span class="ui">Guardar</span>.</p></div>
+  <div class="card" id="es-4"><h2><span class="num">4</span>Fechas y horas que entiende</h2>
+    <ul>
+      <li><b>Fechas:</b> <span class="say">mañana, el próximo viernes, el día 15, 15 de marzo, fin de mes</span></li>
+      <li><b>Horas:</b> <span class="say">a las 10, a las 2 de la tarde, esta noche</span></li>
+    </ul>
+    <p>Una tarea sin fecha va a tu <span class="ui">Bandeja de entrada</span>, para que la programes más tarde.</p></div>
+  <div class="card" id="es-5"><h2><span class="num">5</span>Hoy, Próximas y Bandeja de entrada</h2>
+    <ul>
+      <li><b>Hoy:</b> tareas atrasadas y tareas para hoy, en un solo lugar. Las atrasadas se muestran en rojo.</li>
+      <li><b>Próximas:</b> tareas futuras, agrupadas por mes. Pasan a Hoy automáticamente cuando llega su día.</li>
+      <li><b>Bandeja de entrada:</b> tareas sin fecha, listas para programar.</li>
+    </ul>
+    <h3>Trabajar con tareas</h3>
+    <ul>
+      <li>Toca el <b>círculo</b> para completar una tarea.</li>
+      <li>Toca el <b>lápiz</b> para editarla o reprogramarla.</li>
+    </ul></div>
+  <div class="card" id="es-6"><h2><span class="num">6</span>Recordatorios</h2>
+    <ul>
+      <li><b>Tareas con hora:</b> recordatorios el día antes, 2 horas antes y a la hora indicada.</li>
+      <li><b>Tareas solo con fecha:</b> un recordatorio el día antes.</li>
+    </ul>
+    <p>Puedes cambiar cuándo se te recuerda en Ajustes. Los recordatorios se programan en tu iPhone, así que funcionan sin conexión.</p>
+    <p class="tip">¿No te llegan recordatorios? Comprueba que las notificaciones están permitidas para Voice Notes en la app Ajustes del iPhone.</p></div>
+  <div class="card" id="es-7"><h2><span class="num">7</span>Ajustes</h2>
+    <ul>
+      <li><b>Tema:</b> claro, oscuro o del sistema.</li>
+      <li><b>Idioma:</b> inglés, portugués, español, francés o árabe. Puedes hablar y capturar en cualquiera de ellos.</li>
+      <li><b>Recordatorios:</b> elige cuándo se te avisa.</li>
+      <li><b>Grabaciones:</b> elige borrar las grabaciones después de procesarlas.</li>
+      <li><b>Exportar tus datos:</b> guarda todas tus tareas en un archivo que controlas.</li>
+      <li><b>Borrar todos los datos:</b> elimina para siempre todo lo que hay en la app.</li>
+      <li><b>Opciones de privacidad de anuncios:</b> cambia tu consentimiento de anuncios (EEE y Reino Unido).</li>
+      <li><b>Quitar anuncios:</b> compra única. Restáurala tras reinstalar o en un iPhone nuevo.</li>
+    </ul></div>
+  <div class="card" id="es-8"><h2><span class="num">8</span>Privacidad desde el diseño</h2>
+    <p>El reconocimiento de voz y la extracción de tareas ocurren en tu iPhone. En dispositivos compatibles con Apple Intelligence, la IA del dispositivo convierte tu voz en tareas. En otros iPhone, un extractor integrado hace el trabajo, así que todas las funciones siguen disponibles. En <span class="ui">Ajustes › Privacidad</span> verás cuál usa tu iPhone.</p>
+    <p>No hay cuenta ni servidor. Tu voz y tus tareas nunca salen de tu teléfono. Lee la <a href="../voice-to-task-privacy/">política de privacidad</a>.</p></div>
+  <div class="card" id="es-9"><h2><span class="num">9</span>Preguntas</h2>
+    <dl>
+      <dt>La app no entendió bien una fecha.</dt><dd>Corrígela en la pantalla de revisión antes de guardar, o toca después el lápis de la tarea. Decir la fecha justo después de la tarea («comprar leche mañana») ayuda.</dd>
+      <dt>El micrófono no funciona.</dt><dd>Abre la app Ajustes del iPhone, busca Voice Notes y activa Micrófono y Reconocimiento de voz.</dd>
+      <dt>¿Puedo usarla sin conexión?</dt><dd>Sí. Capturar, guardar y los recordatorios funcionan en tu iPhone. Los anuncios necesitan conexión.</dd>
+      <dt>¿Qué pasa si borro la app?</dt><dd>Tus tareas se borran con ella. Exporta tus datos antes si quieres conservar una copia.</dd>
+      <dt>Compré Quitar anuncios pero vuelvo a ver anuncios.</dt><dd>Usa la opción de restaurar junto a Quitar anuncios en Ajustes, con el mismo Apple ID.</dd>
+    </dl></div>
+  <div class="card"><h2>¿Necesitas ayuda?</h2>
+    <p>Escribe a <a href="mailto:nur.uudevs@gmail.com">nur.uudevs@gmail.com</a>.</p>
+    <a class="btn" href="https://apps.apple.com/app/id6819695641">Descargar en el App Store</a></div>
+</section>
+
+<!-- ===================== FRANÇAIS ===================== -->
+<section data-lang="fr" hidden data-title="Comment utiliser Voice Notes" data-lead="Voice Notes transforme ce que vous dites en tâches organisées, avec dates, heures et rappels. Tout se passe sur votre iPhone : sans saisie, sans compte, sans cloud.">
+  <div class="card quick">
+    <h2>Démarrage rapide</h2>
+    <ol><li>Touchez le micro.</li><li>Parlez naturellement.</li><li>Vérifiez vos tâches et touchez Enregistrer.</li></ol>
+    <p>Essayez : <span class="say">« Appeler le dentiste demain à 14 h et faire les courses vendredi prochain. »</span></p>
+  </div>
+  <nav class="toc">
+    <a href="#fr-1">Premier lancement</a><a href="#fr-2">Dicter</a><a href="#fr-3">Vérifier</a><a href="#fr-4">Dates et heures</a><a href="#fr-5">Vos listes</a><a href="#fr-6">Rappels</a><a href="#fr-7">Réglages</a><a href="#fr-8">Confidentialité</a><a href="#fr-9">Questions</a>
+  </nav>
+  <div class="card" id="fr-1"><h2><span class="num">1</span>Premier lancement</h2>
+    <p>Pas de compte ni de connexion. La première fois que vous touchez le micro, iOS demande l'accès au <b>Micro</b> et à la <b>Reconnaissance vocale</b>. Autorisez les deux pour que l'app puisse vous entendre et transformer votre voix en texte.</p>
+    <p>Pour recevoir des rappels, autorisez aussi les notifications quand on vous le demande.</p></div>
+  <div class="card" id="fr-2"><h2><span class="num">2</span>Dictez vos tâches</h2>
+    <p>Touchez le bouton du micro et choisissez un mode :</p>
+    <ul>
+      <li><b>Tâche rapide :</b> dites une chose et enregistrez-la en quelques secondes.</li>
+      <li><b>Vide-tête :</b> dites tout ce qui vous passe par la tête. L'app le découpe en tâches distinctes.</li>
+    </ul>
+    <p>Pendant que vous parlez, une onde sonore et un minuteur s'affichent en direct. Vous pouvez mettre en pause et reprendre. Quand vous avez fini, touchez <span class="ui">Terminer</span>.</p>
+    <p class="tip">Parlez comme d'habitude. Donner une date ou une heure avec chaque tâche (« …lundi », « …à 10 h ») permet à l'app de la planifier pour vous.</p></div>
+  <div class="card" id="fr-3"><h2><span class="num">3</span>Vérifiez avant d'enregistrer</h2>
+    <p>Rien n'est enregistré sans votre confirmation. Sur l'écran de vérification, vous pouvez :</p>
+    <ul>
+      <li>Modifier le texte, la date ou l'heure de n'importe quelle tâche.</li>
+      <li>Découper une dictée en tâches distinctes, ou la garder comme une seule note.</li>
+      <li>Fusionner des tâches liées.</li>
+      <li>Vérifier les éléments surlignés. L'app surligne ce dont elle est moins sûre et repère les dates impossibles ou passées.</li>
+    </ul>
+    <p>Quand tout est correct, touchez <span class="ui">Enregistrer</span>.</p></div>
+  <div class="card" id="fr-4"><h2><span class="num">4</span>Dates et heures comprises</h2>
+    <ul>
+      <li><b>Dates :</b> <span class="say">demain, vendredi prochain, le 15, le 15 mars, fin du mois</span></li>
+      <li><b>Heures :</b> <span class="say">à 10 h, 14 h, ce soir</span></li>
+    </ul>
+    <p>Une tâche sans date va dans votre <span class="ui">Boîte de réception</span>, pour la planifier plus tard.</p></div>
+  <div class="card" id="fr-5"><h2><span class="num">5</span>Aujourd'hui, À venir et Boîte de réception</h2>
+    <ul>
+      <li><b>Aujourd'hui :</b> les tâches en retard et celles du jour, au même endroit. Les tâches en retard sont en rouge.</li>
+      <li><b>À venir :</b> les tâches futures, regroupées par mois. Elles passent automatiquement dans Aujourd'hui le jour venu.</li>
+      <li><b>Boîte de réception :</b> les tâches sans date, prêtes à être planifiées.</li>
+    </ul>
+    <h3>Gérer vos tâches</h3>
+    <ul>
+      <li>Touchez le <b>cercle</b> pour terminer une tâche.</li>
+      <li>Touchez le <b>crayon</b> pour la modifier ou la replanifier.</li>
+    </ul></div>
+  <div class="card" id="fr-6"><h2><span class="num">6</span>Rappels</h2>
+    <ul>
+      <li><b>Tâches avec une heure :</b> rappels la veille, 2 heures avant et à l'heure prévue.</li>
+      <li><b>Tâches avec seulement une date :</b> un rappel la veille.</li>
+    </ul>
+    <p>Vous pouvez changer le moment des rappels dans les Réglages. Les rappels sont programmés sur votre iPhone et fonctionnent donc hors ligne.</p>
+    <p class="tip">Pas de rappels ? Vérifiez que les notifications sont autorisées pour Voice Notes dans l'app Réglages de l'iPhone.</p></div>
+  <div class="card" id="fr-7"><h2><span class="num">7</span>Réglages</h2>
+    <ul>
+      <li><b>Thème :</b> clair, sombre ou celui du système.</li>
+      <li><b>Langue :</b> anglais, portugais, espagnol, français ou arabe. Vous pouvez dicter dans chacune d'elles.</li>
+      <li><b>Rappels :</b> choisissez quand vous êtes prévenu.</li>
+      <li><b>Enregistrements :</b> choisissez de supprimer les enregistrements une fois traités.</li>
+      <li><b>Exporter vos données :</b> enregistrez toutes vos tâches dans un fichier que vous contrôlez.</li>
+      <li><b>Supprimer toutes les données :</b> efface définitivement tout dans l'app.</li>
+      <li><b>Choix de confidentialité publicitaire :</b> modifiez votre consentement aux annonces (EEE et Royaume-Uni).</li>
+      <li><b>Supprimer les annonces :</b> achat unique. Restaurez-le après une réinstallation ou sur un nouvel iPhone.</li>
+    </ul></div>
+  <div class="card" id="fr-8"><h2><span class="num">8</span>Confidentialité dès la conception</h2>
+    <p>La reconnaissance vocale et l'extraction des tâches se font sur votre iPhone. Sur les appareils compatibles avec Apple Intelligence, l'IA embarquée transforme votre voix en tâches. Sur les autres iPhone, un extracteur intégré s'en charge : toutes les fonctions restent disponibles. <span class="ui">Réglages › Confidentialité</span> indique laquelle votre iPhone utilise.</p>
+    <p>Pas de compte, pas de serveur. Votre voix et vos tâches ne quittent jamais votre téléphone. Lisez la <a href="../voice-to-task-privacy/">politique de confidentialité</a>.</p></div>
+  <div class="card" id="fr-9"><h2><span class="num">9</span>Questions</h2>
+    <dl>
+      <dt>L'app a mal compris une date.</dt><dd>Corrigez-la sur l'écran de vérification avant d'enregistrer, ou touchez plus tard le crayon de la tâche. Dire la date juste après la tâche (« acheter du lait demain ») aide.</dd>
+      <dt>Le micro ne fonctionne pas.</dt><dd>Ouvrez l'app Réglages de l'iPhone, trouvez Voice Notes et activez Micro et Reconnaissance vocale.</dd>
+      <dt>Puis-je l'utiliser hors ligne ?</dt><dd>Oui. La dictée, l'enregistrement et les rappels fonctionnent sur votre iPhone. Les annonces nécessitent une connexion.</dd>
+      <dt>Que se passe-t-il si je supprime l'app ?</dt><dd>Vos tâches sont supprimées avec elle. Exportez vos données avant si vous voulez en garder une copie.</dd>
+      <dt>J'ai acheté Supprimer les annonces mais j'en vois encore.</dt><dd>Utilisez l'option de restauration à côté de Supprimer les annonces dans les Réglages, avec le même identifiant Apple.</dd>
+    </dl></div>
+  <div class="card"><h2>Besoin d'aide ?</h2>
+    <p>Écrivez à <a href="mailto:nur.uudevs@gmail.com">nur.uudevs@gmail.com</a>.</p>
+    <a class="btn" href="https://apps.apple.com/app/id6819695641">Télécharger dans l'App Store</a></div>
+</section>
+
+<!-- ===================== العربية ===================== -->
+<section data-lang="ar" hidden data-title="كيفية استخدام Voice Notes" data-lead="يحوّل Voice Notes ما تقوله إلى مهام منظّمة بتواريخ وأوقات وتذكيرات. كل شيء يحدث على جهاز iPhone: بلا كتابة، بلا حساب، بلا سحابة.">
+  <div class="card quick">
+    <h2>بداية سريعة</h2>
+    <ol><li>اضغط على الميكروفون.</li><li>تحدّث بشكل طبيعي.</li><li>راجع مهامك واضغط حفظ.</li></ol>
+    <p>جرّب: <span class="say">«اتصل بطبيب الأسنان غدًا الساعة 2 ظهرًا واشترِ البقالة يوم الجمعة القادم.»</span></p>
+  </div>
+  <nav class="toc">
+    <a href="#ar-1">أول تشغيل</a><a href="#ar-2">التسجيل</a><a href="#ar-3">المراجعة</a><a href="#ar-4">التواريخ والأوقات</a><a href="#ar-5">قوائمك</a><a href="#ar-6">التذكيرات</a><a href="#ar-7">الإعدادات</a><a href="#ar-8">الخصوصية</a><a href="#ar-9">أسئلة</a>
+  </nav>
+  <div class="card" id="ar-1"><h2><span class="num">1</span>أول تشغيل</h2>
+    <p>لا يوجد حساب ولا تسجيل دخول. في أول مرة تضغط فيها على الميكروفون، يطلب iOS الوصول إلى <b>الميكروفون</b> و<b>التعرّف على الكلام</b>. اسمح بالاثنين حتى يتمكن التطبيق من سماعك وتحويل صوتك إلى نص.</p>
+    <p>لتصلك التذكيرات، اسمح أيضًا بالإشعارات عند الطلب.</p></div>
+  <div class="card" id="ar-2"><h2><span class="num">2</span>سجّل بصوتك</h2>
+    <p>اضغط زر الميكروفون واختر وضعًا:</p>
+    <ul>
+      <li><b>مهمة سريعة:</b> قل شيئًا واحدًا واحفظه في ثوانٍ.</li>
+      <li><b>تفريغ الأفكار:</b> تحدّث عن كل ما يدور في ذهنك، ويقسّمه التطبيق إلى مهام منفصلة.</li>
+    </ul>
+    <p>أثناء حديثك ترى موجة صوتية ومؤقتًا مباشرين. يمكنك الإيقاف المؤقت والاستئناف. عند الانتهاء، اضغط <span class="ui">إنهاء</span>.</p>
+    <p class="tip">تحدّث كما تتحدث عادةً. ذِكر تاريخ أو وقت مع كل مهمة («…يوم الاثنين»، «…الساعة 10») يتيح للتطبيق جدولتها لك.</p></div>
+  <div class="card" id="ar-3"><h2><span class="num">3</span>راجع قبل الحفظ</h2>
+    <p>لا يُحفظ شيء حتى تؤكد. في شاشة المراجعة يمكنك:</p>
+    <ul>
+      <li>تعديل نص أي مهمة أو تاريخها أو وقتها.</li>
+      <li>تقسيم التسجيل إلى مهام منفصلة، أو إبقاؤه ملاحظة واحدة.</li>
+      <li>دمج المهام المترابطة في مهمة واحدة.</li>
+      <li>التحقق من العناصر المميّزة. يميّز التطبيق ما هو أقل تأكدًا منه، ويكتشف التواريخ المستحيلة أو الماضية.</li>
+    </ul>
+    <p>عندما يبدو كل شيء صحيحًا، اضغط <span class="ui">حفظ</span>.</p></div>
+  <div class="card" id="ar-4"><h2><span class="num">4</span>التواريخ والأوقات التي يفهمها</h2>
+    <ul>
+      <li><b>التواريخ:</b> <span class="say">غدًا، الجمعة القادمة، يوم 15، 15 مارس، نهاية الشهر</span></li>
+      <li><b>الأوقات:</b> <span class="say">الساعة 10، 2 ظهرًا، هذا المساء</span></li>
+    </ul>
+    <p>المهمة بلا تاريخ تذهب إلى <span class="ui">صندوق الوارد</span> لتجدولها لاحقًا.</p></div>
+  <div class="card" id="ar-5"><h2><span class="num">5</span>اليوم والقادمة وصندوق الوارد</h2>
+    <ul>
+      <li><b>اليوم:</b> المهام المتأخرة ومهام اليوم في مكان واحد. تظهر المهام المتأخرة باللون الأحمر.</li>
+      <li><b>القادمة:</b> المهام المستقبلية مجمّعة حسب الشهر. تنتقل تلقائيًا إلى «اليوم» عند حلول موعدها.</li>
+      <li><b>صندوق الوارد:</b> المهام بلا تاريخ، جاهزة للجدولة.</li>
+    </ul>
+    <h3>التعامل مع المهام</h3>
+    <ul>
+      <li>اضغط على <b>الدائرة</b> لإكمال مهمة.</li>
+      <li>اضغط على <b>القلم</b> لتعديلها أو إعادة جدولتها.</li>
+    </ul></div>
+  <div class="card" id="ar-6"><h2><span class="num">6</span>التذكيرات</h2>
+    <ul>
+      <li><b>المهام ذات الوقت:</b> تذكيرات قبل يوم، وقبل ساعتين، وفي الموعد.</li>
+      <li><b>المهام ذات التاريخ فقط:</b> تذكير قبل يوم.</li>
+    </ul>
+    <p>يمكنك تغيير توقيت التذكيرات من الإعدادات. تُجدول التذكيرات على جهاز iPhone، لذا تعمل دون اتصال.</p>
+    <p class="tip">لا تصلك التذكيرات؟ تأكد من السماح بالإشعارات لتطبيق Voice Notes في تطبيق الإعدادات على iPhone.</p></div>
+  <div class="card" id="ar-7"><h2><span class="num">7</span>الإعدادات</h2>
+    <ul>
+      <li><b>المظهر:</b> فاتح أو داكن أو حسب النظام.</li>
+      <li><b>اللغة:</b> الإنجليزية أو البرتغالية أو الإسبانية أو الفرنسية أو العربية. يمكنك التحدث والتسجيل بأي منها.</li>
+      <li><b>التذكيرات:</b> اختر متى يتم تذكيرك.</li>
+      <li><b>التسجيلات:</b> اختر حذف التسجيلات بعد معالجتها.</li>
+      <li><b>تصدير بياناتك:</b> احفظ كل مهامك في ملف تتحكم به.</li>
+      <li><b>حذف كل البيانات:</b> يمحو كل شيء في التطبيق نهائيًا.</li>
+      <li><b>خيارات خصوصية الإعلانات:</b> غيّر موافقتك على الإعلانات (المنطقة الاقتصادية الأوروبية والمملكة المتحدة).</li>
+      <li><b>إزالة الإعلانات:</b> شراء لمرة واحدة. استعده بعد إعادة التثبيت أو على iPhone جديد.</li>
+    </ul></div>
+  <div class="card" id="ar-8"><h2><span class="num">8</span>الخصوصية أولًا</h2>
+    <p>يجري التعرّف على الكلام واستخراج المهام على جهاز iPhone. على الأجهزة التي تدعم Apple Intelligence، يحوّل الذكاء الاصطناعي على الجهاز كلامك إلى مهام. وعلى أجهزة iPhone الأخرى، يقوم مستخرج مدمج بالمهمة، فتبقى كل الميزات متاحة. تعرض <span class="ui">الإعدادات › الخصوصية</span> أيّهما يستخدم جهازك.</p>
+    <p>لا يوجد حساب ولا خادم. صوتك ومهامك لا تغادر هاتفك أبدًا. اقرأ <a href="../voice-to-task-privacy/">سياسة الخصوصية</a>.</p></div>
+  <div class="card" id="ar-9"><h2><span class="num">9</span>أسئلة</h2>
+    <dl>
+      <dt>لم يفهم التطبيق تاريخًا بشكل صحيح.</dt><dd>صحّحه في شاشة المراجعة قبل الحفظ، أو اضغط لاحقًا على قلم المهمة. ذِكر التاريخ بعد المهمة مباشرةً («اشترِ حليبًا غدًا») يساعد.</dd>
+      <dt>الميكروفون لا يعمل.</dt><dd>افتح تطبيق الإعدادات على iPhone، وابحث عن Voice Notes، وفعّل الميكروفون والتعرّف على الكلام.</dd>
+      <dt>هل يعمل دون اتصال؟</dt><dd>نعم. التسجيل والحفظ والتذكيرات تعمل على جهاز iPhone. الإعلانات تحتاج إلى اتصال.</dd>
+      <dt>ماذا يحدث إذا حذفت التطبيق؟</dt><dd>تُحذف مهامك معه. صدّر بياناتك أولًا إن أردت الاحتفاظ بنسخة.</dd>
+      <dt>اشتريت إزالة الإعلانات لكنني أرى إعلانات مجددًا.</dt><dd>استخدم خيار الاستعادة بجانب «إزالة الإعلانات» في الإعدادات، بحساب Apple ID نفسه.</dd>
+    </dl></div>
+  <div class="card"><h2>تحتاج مساعدة؟</h2>
+    <p>راسلنا على <a href="mailto:nur.uudevs@gmail.com" dir="ltr">nur.uudevs@gmail.com</a>.</p>
+    <a class="btn" href="https://apps.apple.com/app/id6819695641">حمّله من App Store</a></div>
+</section>
+
+</main>
+<footer>© 2026 Green Pixel Studio · <a href="../voice-to-task-privacy/">Privacy</a></footer>
+<script>
+(function(){
+  var supported=["en","pt","es","fr","ar"];
+  var sel=document.getElementById("lang");
+  function pick(){
+    var q=new URLSearchParams(location.search).get("lang");
+    if(q&&supported.indexOf(q)>-1) return q;
+    try{var s=localStorage.getItem("vn-lang"); if(s&&supported.indexOf(s)>-1) return s;}catch(e){}
+    var langs=navigator.languages||[navigator.language||"en"];
+    for(var i=0;i<langs.length;i++){
+      var l=(langs[i]||"").toLowerCase().slice(0,2);
+      if(supported.indexOf(l)>-1) return l;
+    }
+    return "en";
+  }
+  function show(l){
+    var secs=document.querySelectorAll("section[data-lang]"), cur;
+    for(var i=0;i<secs.length;i++){var on=secs[i].getAttribute("data-lang")===l; secs[i].hidden=!on; if(on) cur=secs[i];}
+    document.documentElement.lang=l;
+    document.documentElement.dir=(l==="ar")?"rtl":"ltr";
+    document.getElementById("h1").textContent=cur.getAttribute("data-title");
+    document.getElementById("lead").textContent=cur.getAttribute("data-lead");
+    document.title="Voice Notes – "+cur.getAttribute("data-title");
+    sel.value=l;
+  }
+  sel.addEventListener("change",function(){
+    show(sel.value);
+    try{localStorage.setItem("vn-lang",sel.value);}catch(e){}
+    var u=new URL(location.href); u.searchParams.set("lang",sel.value); history.replaceState(null,"",u);
+  });
+  show(pick());
+})();
+</script>
+</body>
+</html>
