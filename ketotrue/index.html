@@ -1,0 +1,644 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KetoTrue – User guide</title>
+<meta name="description" content="How to use KetoTrue: log your weight and food, read your real TDEE, and see water vs fat loss.">
+<style>
+:root{
+  --brand:#2b77d6; --brand-ink:#ffffff; --bg:#f3f5f8; --card:#ffffff; --ink:#1b1f24; --muted:#5d6672;
+  --line:#e2e6eb; --soft:#eaf2fc; --warn-bg:#fff6e5; --warn-line:#f0d49a;
+}
+@media (prefers-color-scheme: dark){
+  :root{ --brand:#3d86e0; --bg:#101317; --card:#1a1f25; --ink:#e8ebef; --muted:#9aa4b0;
+    --line:#2b323a; --soft:#18263a; --warn-bg:#2b2416; --warn-line:#5c4a22; }
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans Arabic",sans-serif}
+a{color:var(--brand)}
+header{background:var(--brand);color:var(--brand-ink);padding:28px 16px 64px}
+.wrap{max-width:760px;margin:0 auto}
+.top{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.home{color:var(--brand-ink);text-decoration:none;font-size:14px;opacity:.9}
+select{font:inherit;font-size:14px;padding:6px 10px;border-radius:8px;border:0;background:rgba(255,255,255,.18);color:#fff}
+select option{color:#111}
+h1{font-size:30px;line-height:1.2;margin:22px 0 8px}
+header p{margin:0;opacity:.92;max-width:600px}
+main{padding:0 16px 48px;margin-top:-40px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px 22px;margin:0 0 16px}
+.card h2{font-size:20px;margin:0 0 10px;display:flex;gap:10px;align-items:baseline}
+.num{flex:none;display:inline-grid;place-items:center;width:28px;height:28px;border-radius:50%;background:var(--soft);color:var(--brand);font-size:14px;font-weight:700}
+.card h3{font-size:16px;margin:16px 0 4px}
+.card p{margin:0 0 10px}
+ul,ol{margin:0 0 10px;padding-inline-start:22px}
+li{margin:4px 0}
+.quick{background:var(--soft);border-color:transparent}
+.quick ol{font-weight:600}
+.ui{font-weight:600;white-space:nowrap}
+.tip{border-inline-start:3px solid var(--brand);padding:6px 12px;background:var(--soft);border-radius:0 8px 8px 0;margin:10px 0 0}
+[dir=rtl] .tip{border-radius:8px 0 0 8px}
+.warn{background:var(--warn-bg);border-color:var(--warn-line)}
+dl{margin:0}
+dt{font-weight:700;margin-top:12px}
+dd{margin:2px 0 0}
+nav.toc{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 16px}
+nav.toc a{font-size:14px;text-decoration:none;background:var(--card);border:1px solid var(--line);padding:6px 12px;border-radius:999px;color:var(--ink)}
+footer{color:var(--muted);font-size:14px;text-align:center;padding:8px 16px 40px}
+.btn{display:inline-block;background:var(--brand);color:#fff;text-decoration:none;padding:10px 16px;border-radius:10px;font-weight:600;margin:6px 8px 0 0}
+section[hidden]{display:none}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <div class="top">
+      <a class="home" href="../">← Green Pixel Studio</a>
+      <select id="lang" aria-label="Language">
+        <option value="en">English</option>
+        <option value="pt">Português</option>
+        <option value="fr">Français</option>
+        <option value="es">Español</option>
+        <option value="de">Deutsch</option>
+        <option value="no">Norsk</option>
+        <option value="ar">العربية</option>
+      </select>
+    </div>
+    <h1 id="h1">How to use KetoTrue</h1>
+    <p id="lead">KetoTrue learns your real maintenance calories (TDEE) from your morning weigh-ins and food log, and separates glycogen water from fat loss. This guide shows you how to get accurate numbers.</p>
+  </div>
+</header>
+<main class="wrap">
+
+<!-- ===================== ENGLISH ===================== -->
+<section data-lang="en" data-title="How to use KetoTrue" data-lead="KetoTrue learns your real maintenance calories (TDEE) from your morning weigh-ins and food log, and separates glycogen water from fat loss. This guide shows you how to get accurate numbers.">
+  <div class="card quick">
+    <h2>Quick start</h2>
+    <ol><li>Enter your profile.</li><li>Weigh yourself every morning.</li><li>Log everything you eat and drink.</li></ol>
+    <p>The more complete days you log, the more your TDEE is based on your own data instead of a formula.</p>
+  </div>
+  <nav class="toc">
+    <a href="#en-1">Profile</a><a href="#en-2">Weigh-in</a><a href="#en-3">Food</a><a href="#en-4">Net carbs</a><a href="#en-5">Targets</a><a href="#en-6">Trends</a><a href="#en-7">Electrolytes &amp; ketones</a><a href="#en-8">Settings</a><a href="#en-9">Tips</a><a href="#en-10">FAQ</a>
+  </nav>
+  <div class="card" id="en-1"><h2><span class="num">1</span>Set up your profile</h2>
+    <p>Enter your sex, age, height, weight, activity level and goal. If you know them, add your body fat % and keto status (for example, if you're just starting). Choose metric or imperial units and your nutrition-label region.</p>
+    <p>KetoTrue uses this for its starting TDEE estimate and your first daily targets. No account or sign-up is needed.</p></div>
+  <div class="card" id="en-2"><h2><span class="num">2</span>Weigh in every morning</h2>
+    <p>On the <span class="ui">Today</span> tab, type your weight under <span class="ui">Morning weight</span> and tap <span class="ui">Save</span>.</p>
+    <ul><li>Weigh after waking and using the bathroom, before eating or drinking.</li><li>Use the same scale, in the same place, every day.</li><li>Forgot a day? Use the arrows beside the date to go back and fill it in.</li></ul>
+    <p class="tip">Daily weigh-ins give the best TDEE. One reading a day is enough.</p></div>
+  <div class="card" id="en-3"><h2><span class="num">3</span>Log your food</h2>
+    <p>From the <span class="ui">Today</span> tab, add everything you eat and drink that has calories.</p>
+    <ul>
+      <li><b>Search:</b> start typing. Foods on your phone (the built-in list and your own foods) appear first.</li>
+      <li><b>Search online:</b> if nothing on your phone matches, KetoTrue searches Open Food Facts automatically. Otherwise, tap <span class="ui">Search online</span>. Products sold in your country come first, and foods you add are saved for offline use.</li>
+      <li><b>Scan label:</b> take or choose a photo of a nutrition label and KetoTrue fills in the numbers. Check them before saving. The photo is read on your phone and never uploaded.</li>
+      <li><b>Add your own:</b> type the values from the package.</li>
+    </ul>
+    <p class="tip">Don't forget cooking oil, butter, cream and sauces. They are easy to miss and high in calories.</p></div>
+  <div class="card" id="en-4"><h2><span class="num">4</span>Get net carbs right</h2>
+    <p>Nutrition labels differ by country. When you add a food, choose the <span class="ui">Label style</span> that matches the package:</p>
+    <ul><li><b>EU / UK / AU:</b> carbohydrate already excludes fibre. Enter the numbers as printed.</li><li><b>US / Canada:</b> total carbohydrate includes fibre. KetoTrue subtracts the fibre for you.</li></ul>
+    <p>If the label lists polyols or sugar alcohols, enter them too, and KetoTrue accounts for them in net carbs. US labels given per serving are converted to per 100 g automatically.</p></div>
+  <div class="card" id="en-5"><h2><span class="num">5</span>Your daily targets</h2>
+    <p>The <span class="ui">Targets</span> card on <span class="ui">Today</span> shows calories, net carbs, protein and fat eaten so far against today's target.</p>
+    <p>Targets follow your TDEE, so they adjust as KetoTrue learns how much energy you really use.</p></div>
+  <div class="card" id="en-6"><h2><span class="num">6</span>Read your trends</h2>
+    <h3>Maintenance calories (TDEE)</h3>
+    <p>Your current estimate, with a range and a confidence level. <b>Formula</b> is the estimate from your profile, <b>Measured</b> comes from your weigh-ins and food log, and <b>Complete days</b> counts the days you've fully logged. More complete days give higher confidence.</p>
+    <h3>Weight, last 30 days</h3>
+    <p>Dots are your scale readings. The line removes modelled glycogen water, so carb days and keto week one don't distort your real trend.</p>
+    <h3>Last 7 days: water vs fat</h3>
+    <p>How much of this week's change was glycogen water and how much was fat and tissue.</p>
+    <h3>TDEE over time and net carbs</h3>
+    <p>Tap any chart point or bar to read that day.</p></div>
+  <div class="card" id="en-7"><h2><span class="num">7</span>Electrolytes, ketones and glucose</h2>
+    <p>You can log sodium, potassium and magnesium. This is especially useful in the first weeks of keto.</p>
+    <p>You can also log blood ketones and glucose. When you have both, KetoTrue shows your <b>GKI</b> (glucose-ketone index: glucose ÷ ketones, both in mmol/L). A lower GKI means deeper ketosis. Both are optional.</p></div>
+  <div class="card" id="en-8"><h2><span class="num">8</span>Settings</h2>
+    <ul>
+      <li><b>Language:</b> use your phone's language or pick one of 7.</li>
+      <li><b>Units and label region:</b> metric or imperial; EU/UK/AU or US/Canada labels.</li>
+      <li><b>Backup:</b> export a backup (JSON) or your daily totals (CSV), and restore a backup. Keep a backup somewhere safe. Your data is only on your phone, so nobody can recover it if the phone is lost.</li>
+      <li><b>Ad privacy choices:</b> change your ad consent (EEA, UK and Switzerland).</li>
+      <li><b>Remove ads:</b> a one-time purchase.</li>
+      <li><b>Delete all data:</b> erases everything from the app.</li>
+    </ul></div>
+  <div class="card" id="en-9"><h2><span class="num">9</span>Tips for an accurate TDEE</h2>
+    <ul>
+      <li>Weigh every morning under the same conditions.</li>
+      <li>Log full days, including weekends and treat meals. Partly logged days make your TDEE look lower than it really is.</li>
+      <li>Use a kitchen scale for foods when you can.</li>
+      <li>Watch the trend line and the water vs fat card, not a single day's scale reading.</li>
+    </ul></div>
+  <div class="card" id="en-10"><h2><span class="num">10</span>Questions</h2>
+    <dl>
+      <dt>Why did my weight jump after one carb meal?</dt><dd>Carbs refill glycogen, which your body stores with roughly 3 g of water per gram. KetoTrue models this water, so it isn't counted as fat.</dd>
+      <dt>Why did I lose so much in the first week?</dt><dd>Mostly glycogen water leaving as your stores empty. The water vs fat card shows the split.</dd>
+      <dt>Why does my TDEE keep changing?</dt><dd>It's re-estimated from your latest data. The range gets narrower as you log more complete days.</dd>
+      <dt>Is my data uploaded?</dt><dd>No. There's no account, and your logs stay on your phone. See the <a href="../ketotrue-privacy/">privacy policy</a>.</dd>
+      <dt>How do I move to a new phone?</dt><dd>Export a backup in Settings, copy the file to the new phone, then restore it there.</dd>
+    </dl></div>
+  <div class="card warn"><h2>Not medical advice</h2>
+    <p>KetoTrue gives estimates, not medical advice. Talk to your doctor before starting a ketogenic diet, especially if you have diabetes, take medication, or are pregnant or breastfeeding.</p></div>
+  <div class="card"><h2>Need help?</h2>
+    <p>Email <a href="mailto:nur.uudevs@gmail.com">nur.uudevs@gmail.com</a>.</p>
+    <a class="btn" href="https://play.google.com/store/apps/details?id=com.ketotrue.app">Get it on Google Play</a></div>
+</section>
+
+<!-- ===================== PORTUGUÊS ===================== -->
+<section data-lang="pt" hidden data-title="Como usar o KetoTrue" data-lead="O KetoTrue aprende as suas calorias reais de manutenção (TDEE) a partir das pesagens matinais e do registo alimentar, e separa a água do glicogénio da perda de gordura. Este guia mostra como obter números precisos.">
+  <div class="card quick">
+    <h2>Início rápido</h2>
+    <ol><li>Preencha o seu perfil.</li><li>Pese-se todas as manhãs.</li><li>Registe tudo o que come e bebe.</li></ol>
+    <p>Quantos mais dias completos registar, mais o seu TDEE se baseia nos seus próprios dados em vez de uma fórmula.</p>
+  </div>
+  <nav class="toc">
+    <a href="#pt-1">Perfil</a><a href="#pt-2">Pesagem</a><a href="#pt-3">Alimentos</a><a href="#pt-4">Hidratos líquidos</a><a href="#pt-5">Metas</a><a href="#pt-6">Tendências</a><a href="#pt-7">Eletrólitos e cetonas</a><a href="#pt-8">Definições</a><a href="#pt-9">Dicas</a><a href="#pt-10">Perguntas</a>
+  </nav>
+  <div class="card" id="pt-1"><h2><span class="num">1</span>Configure o seu perfil</h2>
+    <p>Indique o sexo, idade, altura, peso, nível de atividade e objetivo. Se souber, acrescente a % de gordura corporal e o estado keto (por exemplo, se está a começar). Escolha unidades métricas ou imperiais e a região dos rótulos nutricionais.</p>
+    <p>O KetoTrue usa estes dados para a estimativa inicial do TDEE e para as primeiras metas diárias. Não precisa de conta nem de registo.</p></div>
+  <div class="card" id="pt-2"><h2><span class="num">2</span>Pese-se todas as manhãs</h2>
+    <p>No separador <span class="ui">Hoje</span>, escreva o peso em <span class="ui">Peso da manhã</span> e toque em <span class="ui">Guardar</span>.</p>
+    <ul><li>Pese-se depois de acordar e ir à casa de banho, antes de comer ou beber.</li><li>Use a mesma balança, no mesmo sítio, todos os dias.</li><li>Esqueceu-se de um dia? Use as setas junto à data para voltar atrás e preenchê-lo.</li></ul>
+    <p class="tip">Pesagens diárias dão o melhor TDEE. Basta uma leitura por dia.</p></div>
+  <div class="card" id="pt-3"><h2><span class="num">3</span>Registe os alimentos</h2>
+    <p>No separador <span class="ui">Hoje</span>, adicione tudo o que come e bebe que tenha calorias.</p>
+    <ul>
+      <li><b>Pesquisar:</b> comece a escrever. Os alimentos no telemóvel (a lista incluída e os seus próprios alimentos) aparecem primeiro.</li>
+      <li><b>Pesquisar online:</b> se nada no telemóvel corresponder, o KetoTrue pesquisa automaticamente no Open Food Facts. Caso contrário, toque em <span class="ui">Pesquisar online</span>. Os produtos vendidos no seu país aparecem primeiro, e os alimentos que adiciona ficam guardados para uso offline.</li>
+      <li><b>Digitalizar rótulo:</b> tire ou escolha uma foto de um rótulo nutricional e o KetoTrue preenche os valores. Confirme-os antes de guardar. A foto é lida no telemóvel e nunca é enviada.</li>
+      <li><b>Adicionar manualmente:</b> escreva os valores da embalagem.</li>
+    </ul>
+    <p class="tip">Não se esqueça do óleo de cozinha, manteiga, natas e molhos. São fáceis de esquecer e muito calóricos.</p></div>
+  <div class="card" id="pt-4"><h2><span class="num">4</span>Hidratos de carbono líquidos corretos</h2>
+    <p>Os rótulos nutricionais variam de país para país. Ao adicionar um alimento, escolha o <span class="ui">Estilo de rótulo</span> igual ao da embalagem:</p>
+    <ul><li><b>UE / Reino Unido / Austrália:</b> os hidratos de carbono já excluem a fibra. Introduza os valores como estão impressos.</li><li><b>EUA / Canadá:</b> os hidratos de carbono totais incluem a fibra. O KetoTrue subtrai a fibra por si.</li></ul>
+    <p>Se o rótulo indicar polióis ou álcoois de açúcar, introduza-os também e o KetoTrue tem-nos em conta nos hidratos líquidos. Rótulos dos EUA por porção são convertidos automaticamente para 100 g.</p></div>
+  <div class="card" id="pt-5"><h2><span class="num">5</span>As suas metas diárias</h2>
+    <p>O cartão <span class="ui">Metas</span> em <span class="ui">Hoje</span> mostra as calorias, hidratos líquidos, proteína e gordura consumidos até agora face à meta do dia.</p>
+    <p>As metas acompanham o seu TDEE, por isso ajustam-se à medida que o KetoTrue aprende quanta energia gasta realmente.</p></div>
+  <div class="card" id="pt-6"><h2><span class="num">6</span>Leia as suas tendências</h2>
+    <h3>Calorias de manutenção (TDEE)</h3>
+    <p>A estimativa atual, com um intervalo e um nível de confiança. <b>Fórmula</b> é a estimativa do seu perfil, <b>Medido</b> vem das pesagens e do registo alimentar, e <b>Dias completos</b> conta os dias totalmente registados. Mais dias completos dão maior confiança.</p>
+    <h3>Peso, últimos 30 dias</h3>
+    <p>Os pontos são as leituras da balança. A linha remove a água do glicogénio modelada, para que os dias com hidratos e a primeira semana keto não distorçam a tendência real.</p>
+    <h3>Últimos 7 dias: água vs gordura</h3>
+    <p>Quanto da variação desta semana foi água do glicogénio e quanto foi gordura e tecido.</p>
+    <h3>TDEE ao longo do tempo e hidratos líquidos</h3>
+    <p>Toque num ponto ou barra de qualquer gráfico para ver esse dia.</p></div>
+  <div class="card" id="pt-7"><h2><span class="num">7</span>Eletrólitos, cetonas e glicose</h2>
+    <p>Pode registar sódio, potássio e magnésio. É especialmente útil nas primeiras semanas de keto.</p>
+    <p>Também pode registar cetonas e glicose no sangue. Com ambos, o KetoTrue mostra o seu <b>GKI</b> (índice glicose-cetonas: glicose ÷ cetonas, ambos em mmol/L). Um GKI mais baixo indica cetose mais profunda. Ambos são opcionais.</p></div>
+  <div class="card" id="pt-8"><h2><span class="num">8</span>Definições</h2>
+    <ul>
+      <li><b>Idioma:</b> use o idioma do telemóvel ou escolha um dos 7.</li>
+      <li><b>Unidades e região dos rótulos:</b> métrico ou imperial; rótulos UE/RU/AU ou EUA/Canadá.</li>
+      <li><b>Cópia de segurança:</b> exporte uma cópia (JSON) ou os totais diários (CSV) e restaure uma cópia. Guarde-a num local seguro. Os seus dados estão apenas no telemóvel, por isso ninguém os pode recuperar se o perder.</li>
+      <li><b>Opções de privacidade de anúncios:</b> altere o consentimento de anúncios (EEE, Reino Unido e Suíça).</li>
+      <li><b>Remover anúncios:</b> compra única.</li>
+      <li><b>Apagar todos os dados:</b> apaga tudo da app.</li>
+    </ul></div>
+  <div class="card" id="pt-9"><h2><span class="num">9</span>Dicas para um TDEE preciso</h2>
+    <ul>
+      <li>Pese-se todas as manhãs nas mesmas condições.</li>
+      <li>Registe dias completos, incluindo fins de semana e refeições livres. Dias registados pela metade fazem o TDEE parecer mais baixo do que é.</li>
+      <li>Use uma balança de cozinha sempre que puder.</li>
+      <li>Siga a linha de tendência e o cartão água vs gordura, não a leitura de um único dia.</li>
+    </ul></div>
+  <div class="card" id="pt-10"><h2><span class="num">10</span>Perguntas</h2>
+    <dl>
+      <dt>Porque é que o meu peso subiu depois de uma refeição com hidratos?</dt><dd>Os hidratos repõem o glicogénio, que o corpo armazena com cerca de 3 g de água por grama. O KetoTrue modela esta água, para não ser contada como gordura.</dd>
+      <dt>Porque perdi tanto na primeira semana?</dt><dd>Sobretudo água do glicogénio a sair à medida que as reservas esvaziam. O cartão água vs gordura mostra a divisão.</dd>
+      <dt>Porque é que o meu TDEE está sempre a mudar?</dt><dd>É reestimado com os dados mais recentes. O intervalo estreita à medida que regista mais dias completos.</dd>
+      <dt>Os meus dados são enviados?</dt><dd>Não. Não há conta e os registos ficam no telemóvel. Consulte a <a href="../ketotrue-privacy/">política de privacidade</a>.</dd>
+      <dt>Como passo para um telemóvel novo?</dt><dd>Exporte uma cópia de segurança nas Definições, copie o ficheiro para o telemóvel novo e restaure-a lá.</dd>
+    </dl></div>
+  <div class="card warn"><h2>Não é aconselhamento médico</h2>
+    <p>O KetoTrue dá estimativas, não aconselhamento médico. Fale com o seu médico antes de começar uma dieta cetogénica, sobretudo se tem diabetes, toma medicação ou está grávida ou a amamentar.</p></div>
+  <div class="card"><h2>Precisa de ajuda?</h2>
+    <p>Envie um email para <a href="mailto:nur.uudevs@gmail.com">nur.uudevs@gmail.com</a>.</p>
+    <a class="btn" href="https://play.google.com/store/apps/details?id=com.ketotrue.app">Disponível no Google Play</a></div>
+</section>
+
+<!-- ===================== FRANÇAIS ===================== -->
+<section data-lang="fr" hidden data-title="Comment utiliser KetoTrue" data-lead="KetoTrue apprend vos vraies calories de maintenance (TDEE) à partir de vos pesées du matin et de votre journal alimentaire, et distingue l'eau du glycogène de la perte de graisse. Ce guide vous explique comment obtenir des chiffres fiables.">
+  <div class="card quick">
+    <h2>Démarrage rapide</h2>
+    <ol><li>Remplissez votre profil.</li><li>Pesez-vous chaque matin.</li><li>Notez tout ce que vous mangez et buvez.</li></ol>
+    <p>Plus vous enregistrez de journées complètes, plus votre TDEE repose sur vos propres données plutôt que sur une formule.</p>
+  </div>
+  <nav class="toc">
+    <a href="#fr-1">Profil</a><a href="#fr-2">Pesée</a><a href="#fr-3">Aliments</a><a href="#fr-4">Glucides nets</a><a href="#fr-5">Objectifs</a><a href="#fr-6">Tendances</a><a href="#fr-7">Électrolytes et cétones</a><a href="#fr-8">Réglages</a><a href="#fr-9">Conseils</a><a href="#fr-10">Questions</a>
+  </nav>
+  <div class="card" id="fr-1"><h2><span class="num">1</span>Créez votre profil</h2>
+    <p>Indiquez votre sexe, âge, taille, poids, niveau d'activité et objectif. Si vous les connaissez, ajoutez votre % de masse grasse et votre statut keto (par exemple si vous débutez). Choisissez les unités métriques ou impériales et la région de vos étiquettes nutritionnelles.</p>
+    <p>KetoTrue s'en sert pour estimer votre TDEE de départ et vos premiers objectifs quotidiens. Aucun compte ni inscription n'est nécessaire.</p></div>
+  <div class="card" id="fr-2"><h2><span class="num">2</span>Pesez-vous chaque matin</h2>
+    <p>Dans l'onglet <span class="ui">Aujourd'hui</span>, saisissez votre poids sous <span class="ui">Poids du matin</span> et touchez <span class="ui">Enregistrer</span>.</p>
+    <ul><li>Pesez-vous au réveil, après être passé aux toilettes, avant de manger ou de boire.</li><li>Utilisez la même balance, au même endroit, chaque jour.</li><li>Vous avez oublié un jour ? Utilisez les flèches à côté de la date pour revenir en arrière et le compléter.</li></ul>
+    <p class="tip">Les pesées quotidiennes donnent le meilleur TDEE. Une mesure par jour suffit.</p></div>
+  <div class="card" id="fr-3"><h2><span class="num">3</span>Enregistrez vos aliments</h2>
+    <p>Depuis l'onglet <span class="ui">Aujourd'hui</span>, ajoutez tout ce que vous mangez et buvez qui contient des calories.</p>
+    <ul>
+      <li><b>Rechercher :</b> commencez à taper. Les aliments présents sur votre téléphone (la liste intégrée et vos propres aliments) apparaissent en premier.</li>
+      <li><b>Rechercher en ligne :</b> si rien ne correspond sur votre téléphone, KetoTrue cherche automatiquement dans Open Food Facts. Sinon, touchez <span class="ui">Rechercher en ligne</span>. Les produits vendus dans votre pays apparaissent en premier, et les aliments ajoutés restent disponibles hors ligne.</li>
+      <li><b>Scanner une étiquette :</b> prenez ou choisissez une photo d'une étiquette nutritionnelle et KetoTrue remplit les valeurs. Vérifiez-les avant d'enregistrer. La photo est lue sur votre téléphone et n'est jamais envoyée.</li>
+      <li><b>Ajouter le vôtre :</b> saisissez les valeurs de l'emballage.</li>
+    </ul>
+    <p class="tip">N'oubliez pas l'huile de cuisson, le beurre, la crème et les sauces. On les oublie facilement et ils sont très caloriques.</p></div>
+  <div class="card" id="fr-4"><h2><span class="num">4</span>Des glucides nets exacts</h2>
+    <p>Les étiquettes nutritionnelles diffèrent selon les pays. Quand vous ajoutez un aliment, choisissez le <span class="ui">Type d'étiquette</span> correspondant à l'emballage :</p>
+    <ul><li><b>UE / R-U / AU :</b> les glucides excluent déjà les fibres. Saisissez les valeurs telles qu'imprimées.</li><li><b>États-Unis / Canada :</b> les glucides totaux incluent les fibres. KetoTrue les soustrait pour vous.</li></ul>
+    <p>Si l'étiquette indique des polyols ou des sucres-alcools, saisissez-les aussi : KetoTrue en tient compte dans les glucides nets. Les étiquettes américaines par portion sont converties automatiquement pour 100 g.</p></div>
+  <div class="card" id="fr-5"><h2><span class="num">5</span>Vos objectifs quotidiens</h2>
+    <p>La carte <span class="ui">Objectifs</span> dans <span class="ui">Aujourd'hui</span> affiche les calories, glucides nets, protéines et lipides consommés par rapport à l'objectif du jour.</p>
+    <p>Les objectifs suivent votre TDEE et s'ajustent à mesure que KetoTrue apprend combien d'énergie vous dépensez réellement.</p></div>
+  <div class="card" id="fr-6"><h2><span class="num">6</span>Lisez vos tendances</h2>
+    <h3>Calories de maintenance (TDEE)</h3>
+    <p>Votre estimation actuelle, avec une fourchette et un niveau de confiance. <b>Formule</b> est l'estimation tirée de votre profil, <b>Mesuré</b> provient de vos pesées et de votre journal alimentaire, et <b>Jours complets</b> compte les jours entièrement enregistrés. Plus il y en a, plus la confiance est élevée.</p>
+    <h3>Poids, 30 derniers jours</h3>
+    <p>Les points sont vos pesées. La courbe retire l'eau du glycogène modélisée, pour que les jours riches en glucides et la première semaine keto ne faussent pas votre vraie tendance.</p>
+    <h3>7 derniers jours : eau ou graisse</h3>
+    <p>La part de la variation de la semaine due à l'eau du glycogène et celle due à la graisse et aux tissus.</p>
+    <h3>TDEE dans le temps et glucides nets</h3>
+    <p>Touchez un point ou une barre de n'importe quel graphique pour lire ce jour-là.</p></div>
+  <div class="card" id="fr-7"><h2><span class="num">7</span>Électrolytes, cétones et glucose</h2>
+    <p>Vous pouvez noter le sodium, le potassium et le magnésium, ce qui est particulièrement utile pendant les premières semaines de keto.</p>
+    <p>Vous pouvez aussi noter les cétones et le glucose sanguins. Avec les deux, KetoTrue affiche votre <b>GKI</b> (indice glucose-cétones : glucose ÷ cétones, tous deux en mmol/L). Un GKI plus bas signifie une cétose plus profonde. Les deux sont facultatifs.</p></div>
+  <div class="card" id="fr-8"><h2><span class="num">8</span>Réglages</h2>
+    <ul>
+      <li><b>Langue :</b> celle du téléphone ou l'une des 7 proposées.</li>
+      <li><b>Unités et région d'étiquette :</b> métrique ou impérial ; étiquettes UE/R-U/AU ou États-Unis/Canada.</li>
+      <li><b>Sauvegarde :</b> exportez une sauvegarde (JSON) ou vos totaux quotidiens (CSV), et restaurez une sauvegarde. Conservez-la en lieu sûr. Vos données ne sont que sur votre téléphone : personne ne peut les récupérer s'il est perdu.</li>
+      <li><b>Choix de confidentialité publicitaire :</b> modifiez votre consentement aux annonces (EEE, Royaume-Uni et Suisse).</li>
+      <li><b>Supprimer les annonces :</b> achat unique.</li>
+      <li><b>Supprimer toutes les données :</b> efface tout dans l'application.</li>
+    </ul></div>
+  <div class="card" id="fr-9"><h2><span class="num">9</span>Conseils pour un TDEE précis</h2>
+    <ul>
+      <li>Pesez-vous chaque matin dans les mêmes conditions.</li>
+      <li>Enregistrez des journées complètes, week-ends et écarts compris. Les journées incomplètes font paraître votre TDEE plus bas qu'il ne l'est.</li>
+      <li>Utilisez une balance de cuisine quand c'est possible.</li>
+      <li>Suivez la courbe de tendance et la carte eau ou graisse, pas la pesée d'un seul jour.</li>
+    </ul></div>
+  <div class="card" id="fr-10"><h2><span class="num">10</span>Questions</h2>
+    <dl>
+      <dt>Pourquoi mon poids a-t-il bondi après un repas riche en glucides ?</dt><dd>Les glucides reconstituent le glycogène, que le corps stocke avec environ 3 g d'eau par gramme. KetoTrue modélise cette eau pour qu'elle ne soit pas comptée comme de la graisse.</dd>
+      <dt>Pourquoi ai-je autant perdu la première semaine ?</dt><dd>Surtout de l'eau du glycogène, éliminée à mesure que les réserves se vident. La carte eau ou graisse montre la répartition.</dd>
+      <dt>Pourquoi mon TDEE change-t-il sans cesse ?</dt><dd>Il est réestimé à partir de vos dernières données. La fourchette se resserre à mesure que vous enregistrez des journées complètes.</dd>
+      <dt>Mes données sont-elles envoyées ?</dt><dd>Non. Il n'y a pas de compte et vos journaux restent sur votre téléphone. Voir la <a href="../ketotrue-privacy/">politique de confidentialité</a>.</dd>
+      <dt>Comment passer à un nouveau téléphone ?</dt><dd>Exportez une sauvegarde dans les Réglages, copiez le fichier sur le nouveau téléphone, puis restaurez-la.</dd>
+    </dl></div>
+  <div class="card warn"><h2>Pas un avis médical</h2>
+    <p>KetoTrue fournit des estimations, pas des conseils médicaux. Parlez-en à votre médecin avant de commencer un régime cétogène, surtout si vous êtes diabétique, prenez des médicaments, êtes enceinte ou allaitez.</p></div>
+  <div class="card"><h2>Besoin d'aide ?</h2>
+    <p>Écrivez à <a href="mailto:nur.uudevs@gmail.com">nur.uudevs@gmail.com</a>.</p>
+    <a class="btn" href="https://play.google.com/store/apps/details?id=com.ketotrue.app">Disponible sur Google Play</a></div>
+</section>
+
+<!-- ===================== ESPAÑOL ===================== -->
+<section data-lang="es" hidden data-title="Cómo usar KetoTrue" data-lead="KetoTrue aprende tus calorías reales de mantenimiento (TDEE) a partir de tus pesajes matinales y tu registro de comidas, y separa el agua del glucógeno de la pérdida de grasa. Esta guía te explica cómo obtener cifras precisas.">
+  <div class="card quick">
+    <h2>Inicio rápido</h2>
+    <ol><li>Completa tu perfil.</li><li>Pésate cada mañana.</li><li>Registra todo lo que comes y bebes.</li></ol>
+    <p>Cuantos más días completos registres, más se basará tu TDEE en tus propios datos y no en una fórmula.</p>
+  </div>
+  <nav class="toc">
+    <a href="#es-1">Perfil</a><a href="#es-2">Pesaje</a><a href="#es-3">Comidas</a><a href="#es-4">Carbohidratos netos</a><a href="#es-5">Objetivos</a><a href="#es-6">Tendencias</a><a href="#es-7">Electrolitos y cetonas</a><a href="#es-8">Ajustes</a><a href="#es-9">Consejos</a><a href="#es-10">Preguntas</a>
+  </nav>
+  <div class="card" id="es-1"><h2><span class="num">1</span>Configura tu perfil</h2>
+    <p>Indica tu sexo, edad, altura, peso, nivel de actividad y objetivo. Si los conoces, añade tu % de grasa corporal y tu estado keto (por ejemplo, si estás empezando). Elige unidades métricas o imperiales y la región de tus etiquetas nutricionales.</p>
+    <p>KetoTrue usa estos datos para estimar tu TDEE inicial y tus primeros objetivos diarios. No necesitas cuenta ni registro.</p></div>
+  <div class="card" id="es-2"><h2><span class="num">2</span>Pésate cada mañana</h2>
+    <p>En la pestaña <span class="ui">Hoy</span>, escribe tu peso en <span class="ui">Peso de la mañana</span> y toca <span class="ui">Guardar</span>.</p>
+    <ul><li>Pésate al despertar y después de ir al baño, antes de comer o beber.</li><li>Usa la misma báscula, en el mismo sitio, cada día.</li><li>¿Olvidaste un día? Usa las flechas junto a la fecha para volver atrás y completarlo.</li></ul>
+    <p class="tip">Los pesajes diarios dan el mejor TDEE. Basta con una lectura al día.</p></div>
+  <div class="card" id="es-3"><h2><span class="num">3</span>Registra tus comidas</h2>
+    <p>Desde la pestaña <span class="ui">Hoy</span>, añade todo lo que comes y bebes que tenga calorías.</p>
+    <ul>
+      <li><b>Buscar:</b> empieza a escribir. Los alimentos de tu teléfono (la lista incluida y tus propios alimentos) aparecen primero.</li>
+      <li><b>Buscar en línea:</b> si nada en tu teléfono coincide, KetoTrue busca automáticamente en Open Food Facts. Si no, toca <span class="ui">Buscar en línea</span>. Los productos que se venden en tu país aparecen primero, y los alimentos que añades se guardan para usarlos sin conexión.</li>
+      <li><b>Escanear etiqueta:</b> haz o elige una foto de una etiqueta nutricional y KetoTrue rellena los valores. Revísalos antes de guardar. La foto se lee en tu teléfono y nunca se sube.</li>
+      <li><b>Añadir el tuyo:</b> escribe los valores del envase.</li>
+    </ul>
+    <p class="tip">No olvides el aceite de cocinar, la mantequilla, la nata y las salsas. Se olvidan fácilmente y tienen muchas calorías.</p></div>
+  <div class="card" id="es-4"><h2><span class="num">4</span>Carbohidratos netos correctos</h2>
+    <p>Las etiquetas nutricionales varían según el país. Al añadir un alimento, elige el <span class="ui">Tipo de etiqueta</span> que coincida con el envase:</p>
+    <ul><li><b>UE / Reino Unido / Australia:</b> los hidratos de carbono ya excluyen la fibra. Introduce los valores tal como aparecen.</li><li><b>EE. UU. / Canadá:</b> los carbohidratos totales incluyen la fibra. KetoTrue resta la fibra por ti.</li></ul>
+    <p>Si la etiqueta indica polioles o alcoholes de azúcar, introdúcelos también y KetoTrue los tiene en cuenta en los carbohidratos netos. Las etiquetas de EE. UU. por ración se convierten automáticamente a 100 g.</p></div>
+  <div class="card" id="es-5"><h2><span class="num">5</span>Tus objetivos diarios</h2>
+    <p>La tarjeta <span class="ui">Objetivos</span> en <span class="ui">Hoy</span> muestra las calorías, carbohidratos netos, proteínas y grasas consumidos frente al objetivo del día.</p>
+    <p>Los objetivos siguen tu TDEE, así que se ajustan a medida que KetoTrue aprende cuánta energía gastas realmente.</p></div>
+  <div class="card" id="es-6"><h2><span class="num">6</span>Lee tus tendencias</h2>
+    <h3>Calorías de mantenimiento (TDEE)</h3>
+    <p>Tu estimación actual, con un rango y un nivel de confianza. <b>Fórmula</b> es la estimación de tu perfil, <b>Medido</b> procede de tus pesajes y tu registro de comidas, y <b>Días completos</b> cuenta los días registrados por completo. Más días completos dan mayor confianza.</p>
+    <h3>Peso, últimos 30 días</h3>
+    <p>Los puntos son las lecturas de tu báscula. La línea elimina el agua del glucógeno modelada, para que los días con carbohidratos y la primera semana keto no distorsionen tu tendencia real.</p>
+    <h3>Últimos 7 días: agua o grasa</h3>
+    <p>Cuánto del cambio de esta semana fue agua del glucógeno y cuánto fue grasa y tejido.</p>
+    <h3>TDEE a lo largo del tiempo y carbohidratos netos</h3>
+    <p>Toca un punto o una barra de cualquier gráfico para ver ese día.</p></div>
+  <div class="card" id="es-7"><h2><span class="num">7</span>Electrolitos, cetonas y glucosa</h2>
+    <p>Puedes registrar sodio, potasio y magnesio. Es especialmente útil en las primeras semanas de keto.</p>
+    <p>También puedes registrar cetonas y glucosa en sangre. Con ambos datos, KetoTrue muestra tu <b>GKI</b> (índice glucosa-cetonas: glucosa ÷ cetonas, ambos en mmol/L). Un GKI más bajo indica una cetosis más profunda. Ambos son opcionales.</p></div>
+  <div class="card" id="es-8"><h2><span class="num">8</span>Ajustes</h2>
+    <ul>
+      <li><b>Idioma:</b> el de tu teléfono o uno de los 7 disponibles.</li>
+      <li><b>Unidades y región de etiqueta:</b> métrico o imperial; etiquetas UE/RU/AU o EE. UU./Canadá.</li>
+      <li><b>Copia de seguridad:</b> exporta una copia (JSON) o tus totales diarios (CSV), y restaura una copia. Guárdala en un lugar seguro. Tus datos solo están en tu teléfono, así que nadie puede recuperarlos si lo pierdes.</li>
+      <li><b>Opciones de privacidad de anuncios:</b> cambia tu consentimiento de anuncios (EEE, Reino Unido y Suiza).</li>
+      <li><b>Quitar anuncios:</b> compra única.</li>
+      <li><b>Borrar todos los datos:</b> elimina todo de la app.</li>
+    </ul></div>
+  <div class="card" id="es-9"><h2><span class="num">9</span>Consejos para un TDEE preciso</h2>
+    <ul>
+      <li>Pésate cada mañana en las mismas condiciones.</li>
+      <li>Registra días completos, incluidos fines de semana y comidas libres. Los días registrados a medias hacen que tu TDEE parezca más bajo de lo que es.</li>
+      <li>Usa una báscula de cocina siempre que puedas.</li>
+      <li>Fíjate en la línea de tendencia y en la tarjeta agua o grasa, no en el peso de un solo día.</li>
+    </ul></div>
+  <div class="card" id="es-10"><h2><span class="num">10</span>Preguntas</h2>
+    <dl>
+      <dt>¿Por qué subió mi peso tras una comida con carbohidratos?</dt><dd>Los carbohidratos rellenan el glucógeno, que el cuerpo almacena con unos 3 g de agua por gramo. KetoTrue modela esta agua para que no se cuente como grasa.</dd>
+      <dt>¿Por qué perdí tanto la primera semana?</dt><dd>Sobre todo agua del glucógeno que se elimina al vaciarse las reservas. La tarjeta agua o grasa muestra el reparto.</dd>
+      <dt>¿Por qué cambia tanto mi TDEE?</dt><dd>Se vuelve a estimar con tus datos más recientes. El rango se estrecha a medida que registras más días completos.</dd>
+      <dt>¿Se suben mis datos?</dt><dd>No. No hay cuenta y tus registros se quedan en tu teléfono. Consulta la <a href="../ketotrue-privacy/">política de privacidad</a>.</dd>
+      <dt>¿Cómo paso a un teléfono nuevo?</dt><dd>Exporta una copia de seguridad en Ajustes, copia el archivo al teléfono nuevo y restáurala allí.</dd>
+    </dl></div>
+  <div class="card warn"><h2>No es consejo médico</h2>
+    <p>KetoTrue ofrece estimaciones, no consejo médico. Habla con tu médico antes de empezar una dieta cetogénica, sobre todo si tienes diabetes, tomas medicación o estás embarazada o en periodo de lactancia.</p></div>
+  <div class="card"><h2>¿Necesitas ayuda?</h2>
+    <p>Escribe a <a href="mailto:nur.uudevs@gmail.com">nur.uudevs@gmail.com</a>.</p>
+    <a class="btn" href="https://play.google.com/store/apps/details?id=com.ketotrue.app">Disponible en Google Play</a></div>
+</section>
+
+<!-- ===================== DEUTSCH ===================== -->
+<section data-lang="de" hidden data-title="So nutzt du KetoTrue" data-lead="KetoTrue lernt deinen echten Erhaltungsbedarf (TDEE) aus deinen morgendlichen Wiegungen und deinem Ernährungstagebuch und trennt Glykogenwasser von Fettverlust. Diese Anleitung zeigt dir, wie du genaue Werte bekommst.">
+  <div class="card quick">
+    <h2>Schnellstart</h2>
+    <ol><li>Profil ausfüllen.</li><li>Jeden Morgen wiegen.</li><li>Alles eintragen, was du isst und trinkst.</li></ol>
+    <p>Je mehr vollständige Tage du einträgst, desto mehr beruht dein TDEE auf deinen eigenen Daten statt auf einer Formel.</p>
+  </div>
+  <nav class="toc">
+    <a href="#de-1">Profil</a><a href="#de-2">Wiegen</a><a href="#de-3">Essen</a><a href="#de-4">Netto-Kohlenhydrate</a><a href="#de-5">Ziele</a><a href="#de-6">Trends</a><a href="#de-7">Elektrolyte &amp; Ketone</a><a href="#de-8">Einstellungen</a><a href="#de-9">Tipps</a><a href="#de-10">Fragen</a>
+  </nav>
+  <div class="card" id="de-1"><h2><span class="num">1</span>Profil einrichten</h2>
+    <p>Gib Geschlecht, Alter, Größe, Gewicht, Aktivitätslevel und Ziel ein. Wenn du sie kennst, ergänze deinen Körperfettanteil und deinen Keto-Status (zum Beispiel, ob du gerade anfängst). Wähle metrische oder imperiale Einheiten und die Region deiner Nährwertetiketten.</p>
+    <p>KetoTrue nutzt diese Angaben für die erste TDEE-Schätzung und deine ersten Tagesziele. Du brauchst kein Konto und keine Anmeldung.</p></div>
+  <div class="card" id="de-2"><h2><span class="num">2</span>Jeden Morgen wiegen</h2>
+    <p>Gib im Tab <span class="ui">Heute</span> dein Gewicht unter <span class="ui">Morgengewicht</span> ein und tippe auf <span class="ui">Speichern</span>.</p>
+    <ul><li>Wiege dich nach dem Aufstehen und dem Toilettengang, vor dem Essen und Trinken.</li><li>Nutze jeden Tag dieselbe Waage am selben Ort.</li><li>Einen Tag vergessen? Mit den Pfeilen neben dem Datum gehst du zurück und trägst ihn nach.</li></ul>
+    <p class="tip">Tägliches Wiegen ergibt den besten TDEE. Ein Wert pro Tag reicht.</p></div>
+  <div class="card" id="de-3"><h2><span class="num">3</span>Essen eintragen</h2>
+    <p>Füge im Tab <span class="ui">Heute</span> alles hinzu, was du isst und trinkst und Kalorien hat.</p>
+    <ul>
+      <li><b>Suchen:</b> einfach lostippen. Lebensmittel auf deinem Handy (die eingebaute Liste und deine eigenen) erscheinen zuerst.</li>
+      <li><b>Online suchen:</b> Wenn auf dem Handy nichts passt, sucht KetoTrue automatisch in Open Food Facts. Ansonsten tippe auf <span class="ui">Online suchen</span>. Produkte aus deinem Land kommen zuerst, und hinzugefügte Lebensmittel werden für die Offline-Nutzung gespeichert.</li>
+      <li><b>Etikett scannen:</b> Fotografiere ein Nährwertetikett oder wähle ein Foto aus, und KetoTrue füllt die Werte aus. Prüfe sie vor dem Speichern. Das Foto wird auf dem Handy gelesen und nie hochgeladen.</li>
+      <li><b>Eigenes hinzufügen:</b> Gib die Werte von der Verpackung ein.</li>
+    </ul>
+    <p class="tip">Vergiss Speiseöl, Butter, Sahne und Soßen nicht. Sie werden leicht übersehen und haben viele Kalorien.</p></div>
+  <div class="card" id="de-4"><h2><span class="num">4</span>Netto-Kohlenhydrate richtig erfassen</h2>
+    <p>Nährwertetiketten unterscheiden sich je nach Land. Wähle beim Hinzufügen den <span class="ui">Etikett-Typ</span>, der zur Verpackung passt:</p>
+    <ul><li><b>EU / UK / AU:</b> Kohlenhydrate enthalten keine Ballaststoffe. Gib die Werte so ein, wie sie aufgedruckt sind.</li><li><b>USA / Kanada:</b> Gesamtkohlenhydrate enthalten Ballaststoffe. KetoTrue zieht sie für dich ab.</li></ul>
+    <p>Wenn das Etikett mehrwertige Alkohole (Polyole, Zuckeralkohole) angibt, trage sie ebenfalls ein. KetoTrue berücksichtigt sie bei den Netto-Kohlenhydraten. US-Etiketten pro Portion werden automatisch auf 100 g umgerechnet.</p></div>
+  <div class="card" id="de-5"><h2><span class="num">5</span>Deine Tagesziele</h2>
+    <p>Die Karte <span class="ui">Ziele</span> unter <span class="ui">Heute</span> zeigt Kalorien, Netto-Kohlenhydrate, Protein und Fett, die du bisher gegessen hast, im Vergleich zum heutigen Ziel.</p>
+    <p>Die Ziele folgen deinem TDEE und passen sich an, während KetoTrue lernt, wie viel Energie du wirklich verbrauchst.</p></div>
+  <div class="card" id="de-6"><h2><span class="num">6</span>Trends lesen</h2>
+    <h3>Erhaltungskalorien (TDEE)</h3>
+    <p>Deine aktuelle Schätzung mit Spanne und Vertrauensniveau. <b>Formel</b> ist die Schätzung aus deinem Profil, <b>Gemessen</b> stammt aus deinen Wiegungen und deinem Ernährungstagebuch, und <b>Vollständige Tage</b> zählt die komplett eingetragenen Tage. Mehr vollständige Tage bedeuten höheres Vertrauen.</p>
+    <h3>Gewicht, letzte 30 Tage</h3>
+    <p>Die Punkte sind deine Waagenwerte. Die Linie rechnet das modellierte Glykogenwasser heraus, damit Kohlenhydrattage und die erste Keto-Woche deinen echten Trend nicht verzerren.</p>
+    <h3>Letzte 7 Tage: Wasser vs. Fett</h3>
+    <p>Wie viel der Veränderung dieser Woche Glykogenwasser war und wie viel Fett und Gewebe.</p>
+    <h3>TDEE im Verlauf und Netto-Kohlenhydrate</h3>
+    <p>Tippe auf einen Punkt oder Balken in einem Diagramm, um den Tag abzulesen.</p></div>
+  <div class="card" id="de-7"><h2><span class="num">7</span>Elektrolyte, Ketone und Glukose</h2>
+    <p>Du kannst Natrium, Kalium und Magnesium eintragen. Das ist besonders in den ersten Keto-Wochen hilfreich.</p>
+    <p>Du kannst auch Blutketone und Glukose eintragen. Liegen beide vor, zeigt KetoTrue deinen <b>GKI</b> (Glukose-Keton-Index: Glukose ÷ Ketone, beides in mmol/L). Ein niedrigerer GKI bedeutet eine tiefere Ketose. Beides ist optional.</p></div>
+  <div class="card" id="de-8"><h2><span class="num">8</span>Einstellungen</h2>
+    <ul>
+      <li><b>Sprache:</b> Handysprache oder eine der 7 Sprachen.</li>
+      <li><b>Einheiten und Etikettregion:</b> metrisch oder imperial; Etiketten EU/UK/AU oder USA/Kanada.</li>
+      <li><b>Sicherung:</b> Exportiere eine Sicherung (JSON) oder deine Tagessummen (CSV) und stelle eine Sicherung wieder her. Bewahre sie sicher auf. Deine Daten liegen nur auf deinem Handy, deshalb kann sie niemand wiederherstellen, wenn es verloren geht.</li>
+      <li><b>Werbe-Datenschutzoptionen:</b> Ändere deine Einwilligung für Werbung (EWR, UK und Schweiz).</li>
+      <li><b>Werbung entfernen:</b> einmaliger Kauf.</li>
+      <li><b>Alle Daten löschen:</b> löscht alles in der App.</li>
+    </ul></div>
+  <div class="card" id="de-9"><h2><span class="num">9</span>Tipps für einen genauen TDEE</h2>
+    <ul>
+      <li>Wiege dich jeden Morgen unter gleichen Bedingungen.</li>
+      <li>Trage ganze Tage ein, auch Wochenenden und Ausnahmen. Teilweise eingetragene Tage lassen deinen TDEE niedriger erscheinen, als er ist.</li>
+      <li>Nutze möglichst eine Küchenwaage.</li>
+      <li>Achte auf die Trendlinie und die Karte Wasser vs. Fett, nicht auf den Waagenwert eines einzelnen Tages.</li>
+    </ul></div>
+  <div class="card" id="de-10"><h2><span class="num">10</span>Fragen</h2>
+    <dl>
+      <dt>Warum ist mein Gewicht nach einer kohlenhydratreichen Mahlzeit gestiegen?</dt><dd>Kohlenhydrate füllen das Glykogen auf, das der Körper mit etwa 3 g Wasser pro Gramm speichert. KetoTrue modelliert dieses Wasser, damit es nicht als Fett zählt.</dd>
+      <dt>Warum habe ich in der ersten Woche so viel verloren?</dt><dd>Vor allem Glykogenwasser, das beim Leeren der Speicher ausgeschieden wird. Die Karte Wasser vs. Fett zeigt die Aufteilung.</dd>
+      <dt>Warum ändert sich mein TDEE ständig?</dt><dd>Er wird mit deinen neuesten Daten neu geschätzt. Die Spanne wird enger, je mehr vollständige Tage du einträgst.</dd>
+      <dt>Werden meine Daten hochgeladen?</dt><dd>Nein. Es gibt kein Konto, und deine Einträge bleiben auf deinem Handy. Siehe <a href="../ketotrue-privacy/">Datenschutzerklärung</a>.</dd>
+      <dt>Wie wechsle ich auf ein neues Handy?</dt><dd>Exportiere in den Einstellungen eine Sicherung, kopiere die Datei auf das neue Handy und stelle sie dort wieder her.</dd>
+    </dl></div>
+  <div class="card warn"><h2>Keine medizinische Beratung</h2>
+    <p>KetoTrue liefert Schätzungen, keine medizinische Beratung. Sprich mit deiner Ärztin oder deinem Arzt, bevor du mit einer ketogenen Ernährung beginnst, besonders bei Diabetes, Medikamenteneinnahme, Schwangerschaft oder in der Stillzeit.</p></div>
+  <div class="card"><h2>Brauchst du Hilfe?</h2>
+    <p>Schreib an <a href="mailto:nur.uudevs@gmail.com">nur.uudevs@gmail.com</a>.</p>
+    <a class="btn" href="https://play.google.com/store/apps/details?id=com.ketotrue.app">Jetzt bei Google Play</a></div>
+</section>
+
+<!-- ===================== NORSK ===================== -->
+<section data-lang="no" hidden data-title="Slik bruker du KetoTrue" data-lead="KetoTrue lærer ditt reelle vedlikeholdsbehov (TDEE) fra morgenveiingene og matloggen din, og skiller glykogenvann fra fettap. Denne veiledningen viser hvordan du får nøyaktige tall.">
+  <div class="card quick">
+    <h2>Kom i gang</h2>
+    <ol><li>Fyll ut profilen din.</li><li>Vei deg hver morgen.</li><li>Logg alt du spiser og drikker.</li></ol>
+    <p>Jo flere komplette dager du logger, desto mer bygger TDEE-en din på dine egne data i stedet for en formel.</p>
+  </div>
+  <nav class="toc">
+    <a href="#no-1">Profil</a><a href="#no-2">Veiing</a><a href="#no-3">Mat</a><a href="#no-4">Netto karbohydrater</a><a href="#no-5">Mål</a><a href="#no-6">Trender</a><a href="#no-7">Elektrolytter og ketoner</a><a href="#no-8">Innstillinger</a><a href="#no-9">Tips</a><a href="#no-10">Spørsmål</a>
+  </nav>
+  <div class="card" id="no-1"><h2><span class="num">1</span>Sett opp profilen</h2>
+    <p>Oppgi kjønn, alder, høyde, vekt, aktivitetsnivå og mål. Hvis du vet dem, legg til fettprosent og keto-status (for eksempel om du akkurat har startet). Velg metriske eller imperiale enheter og region for næringsdeklarasjoner.</p>
+    <p>KetoTrue bruker dette til den første TDEE-beregningen og de første daglige målene. Du trenger verken konto eller registrering.</p></div>
+  <div class="card" id="no-2"><h2><span class="num">2</span>Vei deg hver morgen</h2>
+    <p>I fanen <span class="ui">I dag</span> skriver du vekten under <span class="ui">Morgenvekt</span> og trykker <span class="ui">Lagre</span>.</p>
+    <ul><li>Vei deg etter at du har stått opp og vært på toalettet, før du spiser eller drikker.</li><li>Bruk samme vekt på samme sted hver dag.</li><li>Glemt en dag? Bruk pilene ved datoen for å gå tilbake og fylle den inn.</li></ul>
+    <p class="tip">Daglig veiing gir best TDEE. Én måling per dag er nok.</p></div>
+  <div class="card" id="no-3"><h2><span class="num">3</span>Logg maten</h2>
+    <p>I fanen <span class="ui">I dag</span> legger du til alt du spiser og drikker som har kalorier.</p>
+    <ul>
+      <li><b>Søk:</b> begynn å skrive. Matvarer på telefonen (den innebygde listen og dine egne) vises først.</li>
+      <li><b>Søk på nett:</b> hvis ingenting på telefonen passer, søker KetoTrue automatisk i Open Food Facts. Ellers trykker du <span class="ui">Søk på nett</span>. Produkter som selges i landet ditt vises først, og matvarer du legger til lagres for bruk uten nett.</li>
+      <li><b>Skann etikett:</b> ta eller velg et bilde av en næringsdeklarasjon, så fyller KetoTrue inn verdiene. Sjekk dem før du lagrer. Bildet leses på telefonen og lastes aldri opp.</li>
+      <li><b>Legg til egen:</b> skriv inn verdiene fra emballasjen.</li>
+    </ul>
+    <p class="tip">Ikke glem matolje, smør, fløte og sauser. De er lette å glemme og har mye kalorier.</p></div>
+  <div class="card" id="no-4"><h2><span class="num">4</span>Riktige netto karbohydrater</h2>
+    <p>Næringsdeklarasjoner er ulike fra land til land. Når du legger til en matvare, velger du <span class="ui">Etikettype</span> som passer emballasjen:</p>
+    <ul><li><b>EU / UK / AU:</b> karbohydrater inkluderer ikke fiber. Skriv inn tallene slik de står.</li><li><b>USA / Canada:</b> totale karbohydrater inkluderer fiber. KetoTrue trekker fra fiberen for deg.</li></ul>
+    <p>Hvis etiketten oppgir polyoler eller sukkeralkoholer, skriv dem også inn, så tar KetoTrue hensyn til dem i netto karbohydrater. Amerikanske etiketter per porsjon regnes automatisk om til per 100 g.</p></div>
+  <div class="card" id="no-5"><h2><span class="num">5</span>Dine daglige mål</h2>
+    <p>Kortet <span class="ui">Mål</span> under <span class="ui">I dag</span> viser kalorier, netto karbohydrater, protein og fett du har spist så langt, mot dagens mål.</p>
+    <p>Målene følger TDEE-en din og justeres etter hvert som KetoTrue lærer hvor mye energi du faktisk bruker.</p></div>
+  <div class="card" id="no-6"><h2><span class="num">6</span>Les trendene dine</h2>
+    <h3>Vedlikeholdskalorier (TDEE)</h3>
+    <p>Gjeldende anslag, med et intervall og et konfidensnivå. <b>Formel</b> er anslaget fra profilen din, <b>Målt</b> kommer fra veiinger og matlogg, og <b>Komplette dager</b> teller dagene du har logget fullt ut. Flere komplette dager gir høyere konfidens.</p>
+    <h3>Vekt, siste 30 dager</h3>
+    <p>Prikkene er vektmålingene dine. Linjen fjerner modellert glykogenvann, slik at karbodager og første keto-uke ikke forvrenger den reelle trenden.</p>
+    <h3>Siste 7 dager: vann vs. fett</h3>
+    <p>Hvor mye av ukens endring som var glykogenvann, og hvor mye som var fett og vev.</p>
+    <h3>TDEE over tid og netto karbohydrater</h3>
+    <p>Trykk på et punkt eller en søyle i et diagram for å se den dagen.</p></div>
+  <div class="card" id="no-7"><h2><span class="num">7</span>Elektrolytter, ketoner og glukose</h2>
+    <p>Du kan logge natrium, kalium og magnesium. Det er spesielt nyttig de første ukene på keto.</p>
+    <p>Du kan også logge ketoner og glukose i blodet. Når du har begge, viser KetoTrue din <b>GKI</b> (glukose-keton-indeks: glukose ÷ ketoner, begge i mmol/L). Lavere GKI betyr dypere ketose. Begge deler er valgfritt.</p></div>
+  <div class="card" id="no-8"><h2><span class="num">8</span>Innstillinger</h2>
+    <ul>
+      <li><b>Språk:</b> telefonens språk eller ett av 7.</li>
+      <li><b>Enheter og etikettregion:</b> metrisk eller imperialt; etiketter fra EU/UK/AU eller USA/Canada.</li>
+      <li><b>Sikkerhetskopi:</b> eksporter en sikkerhetskopi (JSON) eller daglige totaler (CSV), og gjenopprett en sikkerhetskopi. Oppbevar den et trygt sted. Dataene dine finnes bare på telefonen, så ingen kan gjenopprette dem hvis den blir borte.</li>
+      <li><b>Personvernvalg for annonser:</b> endre samtykket for annonser (EØS, Storbritannia og Sveits).</li>
+      <li><b>Fjern annonser:</b> engangskjøp.</li>
+      <li><b>Slett alle data:</b> sletter alt i appen.</li>
+    </ul></div>
+  <div class="card" id="no-9"><h2><span class="num">9</span>Tips for nøyaktig TDEE</h2>
+    <ul>
+      <li>Vei deg hver morgen under like forhold.</li>
+      <li>Logg hele dager, også helger og kosemåltider. Delvis loggede dager får TDEE-en til å se lavere ut enn den er.</li>
+      <li>Bruk kjøkkenvekt når du kan.</li>
+      <li>Følg trendlinjen og kortet vann vs. fett, ikke vekten én enkelt dag.</li>
+    </ul></div>
+  <div class="card" id="no-10"><h2><span class="num">10</span>Spørsmål</h2>
+    <dl>
+      <dt>Hvorfor gikk vekten opp etter ett karbomåltid?</dt><dd>Karbohydrater fyller opp glykogenet, som kroppen lagrer sammen med omtrent 3 g vann per gram. KetoTrue modellerer dette vannet, så det ikke regnes som fett.</dd>
+      <dt>Hvorfor gikk jeg så mye ned den første uken?</dt><dd>Mest glykogenvann som forsvinner når lagrene tømmes. Kortet vann vs. fett viser fordelingen.</dd>
+      <dt>Hvorfor endrer TDEE-en seg hele tiden?</dt><dd>Den beregnes på nytt ut fra de nyeste dataene. Intervallet blir smalere jo flere komplette dager du logger.</dd>
+      <dt>Blir dataene mine lastet opp?</dt><dd>Nei. Det finnes ingen konto, og loggene blir på telefonen. Se <a href="../ketotrue-privacy/">personvernerklæringen</a>.</dd>
+      <dt>Hvordan bytter jeg til ny telefon?</dt><dd>Eksporter en sikkerhetskopi i Innstillinger, kopier filen til den nye telefonen og gjenopprett den der.</dd>
+    </dl></div>
+  <div class="card warn"><h2>Ikke medisinsk rådgivning</h2>
+    <p>KetoTrue gir anslag, ikke medisinske råd. Snakk med legen din før du starter et ketogent kosthold, spesielt hvis du har diabetes, bruker medisiner, er gravid eller ammer.</p></div>
+  <div class="card"><h2>Trenger du hjelp?</h2>
+    <p>Send e-post til <a href="mailto:nur.uudevs@gmail.com">nur.uudevs@gmail.com</a>.</p>
+    <a class="btn" href="https://play.google.com/store/apps/details?id=com.ketotrue.app">Last ned på Google Play</a></div>
+</section>
+
+<!-- ===================== العربية ===================== -->
+<section data-lang="ar" hidden data-title="كيفية استخدام KetoTrue" data-lead="يتعلّم KetoTrue سعراتك الحقيقية للحفاظ على الوزن (TDEE) من أوزانك الصباحية وسجل طعامك، ويفصل ماء الجليكوجين عن فقدان الدهون. يوضح هذا الدليل كيف تحصل على أرقام دقيقة.">
+  <div class="card quick">
+    <h2>بداية سريعة</h2>
+    <ol><li>أدخل ملفك الشخصي.</li><li>زِن نفسك كل صباح.</li><li>سجّل كل ما تأكله وتشربه.</li></ol>
+    <p>كلما سجّلت أيامًا كاملة أكثر، اعتمد TDEE على بياناتك الخاصة بدلًا من معادلة.</p>
+  </div>
+  <nav class="toc">
+    <a href="#ar-1">الملف الشخصي</a><a href="#ar-2">الوزن</a><a href="#ar-3">الطعام</a><a href="#ar-4">الكربوهيدرات الصافية</a><a href="#ar-5">الأهداف</a><a href="#ar-6">الاتجاهات</a><a href="#ar-7">الأملاح والكيتونات</a><a href="#ar-8">الإعدادات</a><a href="#ar-9">نصائح</a><a href="#ar-10">أسئلة</a>
+  </nav>
+  <div class="card" id="ar-1"><h2><span class="num">1</span>أعدّ ملفك الشخصي</h2>
+    <p>أدخل الجنس والعمر والطول والوزن ومستوى النشاط والهدف. وإن كنت تعرفهما، أضف نسبة الدهون في الجسم وحالتك مع الكيتو (مثلًا إن كنت قد بدأت للتو). اختر الوحدات المترية أو الإمبراطورية ومنطقة ملصقات القيم الغذائية.</p>
+    <p>يستخدم KetoTrue هذه البيانات لتقدير TDEE الأولي وأهدافك اليومية الأولى. لا حاجة إلى حساب أو تسجيل.</p></div>
+  <div class="card" id="ar-2"><h2><span class="num">2</span>زِن نفسك كل صباح</h2>
+    <p>في تبويب <span class="ui">اليوم</span>، اكتب وزنك تحت <span class="ui">وزن الصباح</span> واضغط <span class="ui">حفظ</span>.</p>
+    <ul><li>زِن نفسك بعد الاستيقاظ ودخول الحمام، وقبل الأكل أو الشرب.</li><li>استخدم الميزان نفسه في المكان نفسه كل يوم.</li><li>نسيت يومًا؟ استخدم الأسهم بجانب التاريخ للرجوع وإكماله.</li></ul>
+    <p class="tip">الوزن اليومي يعطي أفضل TDEE. قراءة واحدة في اليوم تكفي.</p></div>
+  <div class="card" id="ar-3"><h2><span class="num">3</span>سجّل طعامك</h2>
+    <p>من تبويب <span class="ui">اليوم</span>، أضف كل ما تأكله وتشربه مما يحتوي على سعرات.</p>
+    <ul>
+      <li><b>البحث:</b> ابدأ الكتابة. تظهر الأطعمة الموجودة على هاتفك (القائمة المدمجة وأطعمتك الخاصة) أولًا.</li>
+      <li><b>البحث عبر الإنترنت:</b> إن لم يطابق شيء على هاتفك، يبحث KetoTrue تلقائيًا في Open Food Facts. وإلا فاضغط <span class="ui">البحث عبر الإنترنت</span>. تظهر المنتجات المباعة في بلدك أولًا، وتُحفظ الأطعمة التي تضيفها لاستخدامها دون اتصال.</li>
+      <li><b>مسح الملصق:</b> التقط أو اختر صورة لملصق القيم الغذائية وسيملأ KetoTrue القيم. راجعها قبل الحفظ. تُقرأ الصورة على هاتفك ولا تُرفع أبدًا.</li>
+      <li><b>إضافة طعامك:</b> اكتب القيم من العبوة.</li>
+    </ul>
+    <p class="tip">لا تنسَ زيت الطهي والزبدة والقشدة والصلصات. من السهل نسيانها وسعراتها عالية.</p></div>
+  <div class="card" id="ar-4"><h2><span class="num">4</span>كربوهيدرات صافية صحيحة</h2>
+    <p>تختلف ملصقات القيم الغذائية من بلد لآخر. عند إضافة طعام، اختر <span class="ui">نوع الملصق</span> المطابق للعبوة:</p>
+    <ul><li><b>الاتحاد الأوروبي / المملكة المتحدة / أستراليا:</b> الكربوهيدرات لا تشمل الألياف. أدخل الأرقام كما هي مطبوعة.</li><li><b>الولايات المتحدة / كندا:</b> إجمالي الكربوهيدرات يشمل الألياف. يطرح KetoTrue الألياف عنك.</li></ul>
+    <p>إذا ذكر الملصق البوليولات أو كحوليات السكر، فأدخلها أيضًا وسيأخذها KetoTrue في الحسبان ضمن الكربوهيدرات الصافية. تُحوَّل الملصقات الأمريكية المحسوبة لكل حصة تلقائيًا إلى كل 100 غ.</p></div>
+  <div class="card" id="ar-5"><h2><span class="num">5</span>أهدافك اليومية</h2>
+    <p>تعرض بطاقة <span class="ui">الأهداف</span> في <span class="ui">اليوم</span> السعرات والكربوهيدرات الصافية والبروتين والدهون التي تناولتها حتى الآن مقارنةً بهدف اليوم.</p>
+    <p>تتبع الأهداف قيمة TDEE لديك، لذا تتعدّل كلما تعلّم KetoTrue مقدار الطاقة التي تستهلكها فعلًا.</p></div>
+  <div class="card" id="ar-6"><h2><span class="num">6</span>اقرأ اتجاهاتك</h2>
+    <h3>سعرات الحفاظ على الوزن (TDEE)</h3>
+    <p>تقديرك الحالي مع نطاق ومستوى ثقة. <b>المعادلة</b> هي التقدير من ملفك الشخصي، و<b>المقاس</b> يأتي من أوزانك وسجل طعامك، و<b>الأيام الكاملة</b> يعدّ الأيام التي سجّلتها بالكامل. كلما زادت الأيام الكاملة ارتفعت الثقة.</p>
+    <h3>الوزن، آخر 30 يومًا</h3>
+    <p>النقاط هي قراءات الميزان. يزيل الخط ماء الجليكوجين المُقدَّر، كي لا تشوّه أيام الكربوهيدرات والأسبوع الأول من الكيتو اتجاهك الحقيقي.</p>
+    <h3>آخر 7 أيام: ماء أم دهون</h3>
+    <p>كم من تغيّر هذا الأسبوع كان ماء جليكوجين، وكم كان دهونًا وأنسجة.</p>
+    <h3>TDEE عبر الزمن والكربوهيدرات الصافية</h3>
+    <p>اضغط على أي نقطة أو عمود في الرسم لقراءة ذلك اليوم.</p></div>
+  <div class="card" id="ar-7"><h2><span class="num">7</span>الأملاح المعدنية والكيتونات والجلوكوز</h2>
+    <p>يمكنك تسجيل الصوديوم والبوتاسيوم والمغنيسيوم، وهذا مفيد خاصةً في الأسابيع الأولى من الكيتو.</p>
+    <p>يمكنك أيضًا تسجيل الكيتونات والجلوكوز في الدم. عند توفر الاثنين، يعرض KetoTrue مؤشر <b>GKI</b> (مؤشر الجلوكوز إلى الكيتون: الجلوكوز ÷ الكيتونات، وكلاهما بوحدة mmol/L). كلما انخفض GKI كانت الكيتوزية أعمق. كلاهما اختياري.</p></div>
+  <div class="card" id="ar-8"><h2><span class="num">8</span>الإعدادات</h2>
+    <ul>
+      <li><b>اللغة:</b> لغة الهاتف أو واحدة من 7 لغات.</li>
+      <li><b>الوحدات ومنطقة الملصق:</b> مترية أو إمبراطورية؛ ملصقات الاتحاد الأوروبي/المملكة المتحدة/أستراليا أو الولايات المتحدة/كندا.</li>
+      <li><b>النسخ الاحتياطي:</b> صدّر نسخة احتياطية (JSON) أو مجاميعك اليومية (CSV)، واستعد نسخة احتياطية. احفظها في مكان آمن. بياناتك موجودة على هاتفك فقط، لذا لا يمكن لأحد استعادتها إذا فُقد.</li>
+      <li><b>خيارات خصوصية الإعلانات:</b> غيّر موافقتك على الإعلانات (المنطقة الاقتصادية الأوروبية والمملكة المتحدة وسويسرا).</li>
+      <li><b>إزالة الإعلانات:</b> شراء لمرة واحدة.</li>
+      <li><b>حذف كل البيانات:</b> يمحو كل شيء من التطبيق.</li>
+    </ul></div>
+  <div class="card" id="ar-9"><h2><span class="num">9</span>نصائح لـ TDEE دقيق</h2>
+    <ul>
+      <li>زِن نفسك كل صباح في الظروف نفسها.</li>
+      <li>سجّل أيامًا كاملة، بما فيها عطلات نهاية الأسبوع والوجبات الحرة. الأيام المسجّلة جزئيًا تجعل TDEE يبدو أقل من حقيقته.</li>
+      <li>استخدم ميزان مطبخ كلما أمكن.</li>
+      <li>تابع خط الاتجاه وبطاقة الماء أم الدهون، لا قراءة الميزان ليوم واحد.</li>
+    </ul></div>
+  <div class="card" id="ar-10"><h2><span class="num">10</span>أسئلة</h2>
+    <dl>
+      <dt>لماذا ارتفع وزني بعد وجبة كربوهيدرات واحدة؟</dt><dd>الكربوهيدرات تعيد ملء الجليكوجين، الذي يخزّنه الجسم مع نحو 3 غ من الماء لكل غرام. يقدّر KetoTrue هذا الماء حتى لا يُحسب دهونًا.</dd>
+      <dt>لماذا فقدت الكثير في الأسبوع الأول؟</dt><dd>معظمه ماء جليكوجين يخرج مع نفاد المخزون. تعرض بطاقة الماء أم الدهون هذا التقسيم.</dd>
+      <dt>لماذا يتغير TDEE باستمرار؟</dt><dd>يُعاد تقديره من أحدث بياناتك. ويضيق النطاق كلما سجّلت أيامًا كاملة أكثر.</dd>
+      <dt>هل تُرفع بياناتي؟</dt><dd>لا. لا يوجد حساب، وتبقى سجلاتك على هاتفك. راجع <a href="../ketotrue-privacy/">سياسة الخصوصية</a>.</dd>
+      <dt>كيف أنتقل إلى هاتف جديد؟</dt><dd>صدّر نسخة احتياطية من الإعدادات، وانسخ الملف إلى الهاتف الجديد، ثم استعدها هناك.</dd>
+    </dl></div>
+  <div class="card warn"><h2>ليست نصيحة طبية</h2>
+    <p>يقدّم KetoTrue تقديرات وليس نصيحة طبية. استشر طبيبك قبل بدء نظام الكيتو الغذائي، خاصةً إذا كنت مصابًا بالسكري أو تتناول أدوية أو كنتِ حاملًا أو مرضعًا.</p></div>
+  <div class="card"><h2>تحتاج مساعدة؟</h2>
+    <p>راسلنا على <a href="mailto:nur.uudevs@gmail.com" dir="ltr">nur.uudevs@gmail.com</a>.</p>
+    <a class="btn" href="https://play.google.com/store/apps/details?id=com.ketotrue.app">احصل عليه من Google Play</a></div>
+</section>
+
+</main>
+<footer>© 2026 Green Pixel Studio · <a href="../ketotrue-privacy/">Privacy</a></footer>
+<script>
+(function(){
+  var supported=["en","pt","fr","es","de","no","ar"];
+  var sel=document.getElementById("lang");
+  function pick(){
+    var q=new URLSearchParams(location.search).get("lang");
+    if(q&&supported.indexOf(q)>-1) return q;
+    try{var s=localStorage.getItem("kt-lang"); if(s&&supported.indexOf(s)>-1) return s;}catch(e){}
+    var langs=navigator.languages||[navigator.language||"en"];
+    for(var i=0;i<langs.length;i++){
+      var l=(langs[i]||"").toLowerCase().slice(0,2);
+      if(l==="nb"||l==="nn") l="no";
+      if(supported.indexOf(l)>-1) return l;
+    }
+    return "en";
+  }
+  function show(l){
+    var secs=document.querySelectorAll("section[data-lang]"), cur;
+    for(var i=0;i<secs.length;i++){var on=secs[i].getAttribute("data-lang")===l; secs[i].hidden=!on; if(on) cur=secs[i];}
+    document.documentElement.lang=l;
+    document.documentElement.dir=(l==="ar")?"rtl":"ltr";
+    document.getElementById("h1").textContent=cur.getAttribute("data-title");
+    document.getElementById("lead").textContent=cur.getAttribute("data-lead");
+    document.title="KetoTrue – "+cur.getAttribute("data-title");
+    sel.value=l;
+  }
+  sel.addEventListener("change",function(){
+    show(sel.value);
+    try{localStorage.setItem("kt-lang",sel.value);}catch(e){}
+    var u=new URL(location.href); u.searchParams.set("lang",sel.value); history.replaceState(null,"",u);
+  });
+  show(pick());
+})();
+</script>
+</body>
+</html>
