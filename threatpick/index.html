@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ThreatPick – User guide</title>
+<meta name="description" content="How to use ThreatPick: scan your apps and files, find the app behind pop-up ads, quarantine files and turn on alerts.">
+<style>
+:root{
+  --brand:#0f8a5f; --brand-ink:#ffffff; --bg:#f3f5f8; --card:#ffffff; --ink:#1b1f24; --muted:#5d6672;
+  --line:#e2e6eb; --soft:#e6f5ee; --warn-bg:#fff6e5; --warn-line:#f0d49a;
+}
+@media (prefers-color-scheme: dark){
+  :root{ --brand:#22a874; --bg:#101317; --card:#1a1f25; --ink:#e8ebef; --muted:#9aa4b0;
+    --line:#2b323a; --soft:#16291f; --warn-bg:#2b2416; --warn-line:#5c4a22; }
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif}
+a{color:var(--brand)}
+header{background:var(--brand);color:var(--brand-ink);padding:28px 16px 64px}
+.wrap{max-width:760px;margin:0 auto}
+.top{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.home{color:var(--brand-ink);text-decoration:none;font-size:14px;opacity:.9}
+h1{font-size:30px;line-height:1.2;margin:22px 0 8px}
+header p{margin:0;opacity:.92;max-width:600px}
+main{padding:0 16px 48px;margin-top:-40px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px 22px;margin:0 0 16px}
+.card h2{font-size:20px;margin:0 0 10px;display:flex;gap:10px;align-items:baseline}
+.num{flex:none;display:inline-grid;place-items:center;width:28px;height:28px;border-radius:50%;background:var(--soft);color:var(--brand);font-size:14px;font-weight:700}
+.card h3{font-size:16px;margin:16px 0 4px}
+.card p{margin:0 0 10px}
+ul,ol{margin:0 0 10px;padding-inline-start:22px}
+li{margin:4px 0}
+.quick{background:var(--soft);border-color:transparent}
+.quick ol{font-weight:600}
+.tip{border-inline-start:3px solid var(--brand);padding:6px 12px;background:var(--soft);border-radius:0 8px 8px 0;margin:10px 0 0}
+.warn{background:var(--warn-bg);border-color:var(--warn-line)}
+dl{margin:0}
+dt{font-weight:700;margin-top:12px}
+dd{margin:2px 0 0}
+nav.toc{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 16px}
+nav.toc a{font-size:14px;text-decoration:none;background:var(--card);border:1px solid var(--line);padding:6px 12px;border-radius:999px;color:var(--ink)}
+footer{color:var(--muted);font-size:14px;text-align:center;padding:8px 16px 40px}
+.btn{display:inline-block;background:var(--brand);color:#fff;text-decoration:none;padding:10px 16px;border-radius:10px;font-weight:600;margin:6px 8px 0 0}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <div class="top">
+      <a class="home" href="../">← Green Pixel Studio</a>
+    </div>
+    <h1>How to use ThreatPick</h1>
+    <p>ThreatPick checks your phone for fake apps, pop-up adware and dangerous files. Every scan runs on your phone, so your apps and files never leave it.</p>
+  </div>
+</header>
+<main class="wrap">
+  <div class="card quick"><h2>Quick start</h2>
+    <ol><li>Run an app scan.</li><li>Run a file scan.</li><li>Review anything flagged, then uninstall or quarantine it.</li></ol>
+    <p>Turn on real-time alerts if you want ThreatPick to keep checking in the background.</p>
+  </div>
+  <nav class="toc">
+    <a href="#apps">App scan</a><a href="#popups">Pop-up ads</a><a href="#files">File scan</a><a href="#quarantine">Quarantine</a><a href="#alerts">Alerts</a><a href="#permissions">Permissions</a><a href="#ads">Remove ads</a><a href="#faq">FAQ</a>
+  </nav>
+
+  <div class="card" id="apps"><h2><span class="num">1</span>Scan your apps</h2>
+    <p>The app scan looks at every app installed on your phone and flags the ones worth a closer look:</p>
+    <ul>
+      <li><strong>Fake or modified apps:</strong> copies of popular apps whose signing certificate doesn't match the real developer's.</li>
+      <li><strong>Sideloaded apps:</strong> apps installed from outside Google Play.</li>
+      <li><strong>Powerful permissions:</strong> apps that hold permissions that could be misused.</li>
+    </ul>
+    <p>If you decide to remove an app, ThreatPick opens Android's uninstall screen for it. Android always asks you to confirm.</p>
+    <p class="tip">A flag doesn't always mean an app is harmful. An app you installed on purpose from a trusted website will show as sideloaded. Keep it if you trust where it came from.</p>
+  </div>
+
+  <div class="card" id="popups"><h2><span class="num">2</span>Find the app behind pop-up ads</h2>
+    <p>Seeing full-screen ads on your home screen or on top of other apps? The pop-up ad culprit finder uses Android's usage history to show which app was running when the ads appeared, so you know what to uninstall.</p>
+    <p>This needs <strong>Usage access</strong>. ThreatPick asks for it the first time you use the finder.</p>
+    <p class="tip">Use it soon after a pop-up appears. The closer in time, the easier it is to spot the app responsible.</p>
+  </div>
+
+  <div class="card" id="files"><h2><span class="num">3</span>Scan your files</h2>
+    <p>The file scan checks your shared storage, including Downloads, WhatsApp and Telegram media, photos and documents. It looks for:</p>
+    <ul>
+      <li>Dangerous app installers (APK files)</li>
+      <li>Programs disguised as photos or documents</li>
+      <li>Damaged files</li>
+    </ul>
+    <p>Scanning shared storage needs <strong>All files access</strong>. It's optional, and ThreatPick only asks when you start a file scan.</p>
+  </div>
+
+  <div class="card" id="quarantine"><h2><span class="num">4</span>Quarantine, restore or delete</h2>
+    <p>Move a suspicious file into quarantine to take it out of the way without deleting it. From quarantine you can:</p>
+    <ul>
+      <li><strong>Restore</strong> the file if it turns out to be safe.</li>
+      <li><strong>Delete</strong> it for good.</li>
+    </ul>
+    <p>Nothing is deleted unless you choose to delete it.</p>
+  </div>
+
+  <div class="card" id="alerts"><h2><span class="num">5</span>Turn on real-time alerts</h2>
+    <p>With alerts on, ThreatPick checks your phone in the background about every 30 minutes and notifies you when a new suspicious app or dangerous download appears.</p>
+    <p>Alerts need the <strong>Notifications</strong> permission.</p>
+  </div>
+
+  <div class="card" id="permissions"><h2><span class="num">6</span>Permissions explained</h2>
+    <dl>
+      <dt>See all installed apps</dt><dd>Needed to check every app on your phone.</dd>
+      <dt>All files access (optional)</dt><dd>To scan shared storage and quarantine files you choose.</dd>
+      <dt>Usage access (optional)</dt><dd>To find the app that shows pop-up ads.</dd>
+      <dt>Notifications (optional)</dt><dd>For threat alerts and update notices.</dd>
+      <dt>Request uninstall</dt><dd>To open Android's uninstall screen when you choose to remove an app.</dd>
+    </dl>
+  </div>
+
+  <div class="card" id="ads"><h2><span class="num">7</span>Remove ads</h2>
+    <p>ThreatPick is free and supported by ads. A one-time <strong>Remove ads</strong> purchase turns ads off for good, and follows your Google account to your other phones.</p>
+  </div>
+
+  <div class="card" id="faq"><h2><span class="num">8</span>FAQ</h2>
+    <dl>
+      <dt>Are my apps or files uploaded?</dt>
+      <dd>No. Scans run on your phone. Your app list, files and scan results are never uploaded. ThreatPick downloads updated threat lists, but never sends your data.</dd>
+      <dt>Do I need an account?</dt>
+      <dd>No. There's no account or sign-up.</dd>
+      <dt>Which languages does it support?</dt>
+      <dd>ThreatPick is available in 8 languages.</dd>
+    </dl>
+  </div>
+
+  <div class="card warn">
+    <p><strong>Good to know:</strong> ThreatPick adds an extra layer of protection. No security app can catch every threat, so keep installing apps from trusted sources and keep your phone up to date.</p>
+  </div>
+
+  <div class="card">
+    <a class="btn" href="https://play.google.com/store/apps/details?id=com.threatpick.app">Get it on Google Play</a>
+    <p style="margin-top:12px">Questions? Email <a href="mailto:nur.uudevs@gmail.com">nur.uudevs@gmail.com</a>. Read the <a href="privacy.html">privacy policy</a>.</p>
+  </div>
+</main>
+<footer>© 2026 Green Pixel Studio</footer>
+</body>
+</html>
