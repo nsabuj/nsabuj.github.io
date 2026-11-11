@@ -1,1 +1,191 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Paperjet – User guide</title>
+<meta name="description" content="How to use Paperjet: open and convert files, merge, split, sign, fill forms, edit pages and compress PDFs — all on your device.">
+<style>
+:root{
+  --brand:#8e1b2e; --brand-ink:#ffffff; --bg:#faf6f4; --card:#ffffff; --ink:#24161a; --muted:#6f5a5f;
+  --line:#ecdedc; --soft:#f6e4e6; --warn-bg:#fff6e5; --warn-line:#f0d49a;
+}
+@media (prefers-color-scheme: dark){
+  :root{ --brand:#e2677b; --bg:#170e10; --card:#21151a; --ink:#f3e9ea; --muted:#c2adb1;
+    --line:#3a272c; --soft:#34191f; --warn-bg:#2b2416; --warn-line:#5c4a22; }
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif}
+a{color:var(--brand)}
+header{background:linear-gradient(160deg,#8e1b2e 0%,#5e0e1c 70%,#43091a 100%);color:var(--brand-ink);padding:28px 16px 64px}
+.wrap{max-width:760px;margin:0 auto}
+.top{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.home{color:var(--brand-ink);text-decoration:none;font-size:14px;opacity:.9}
+h1{font-size:30px;line-height:1.2;margin:22px 0 8px}
+header p{margin:0;opacity:.92;max-width:600px}
+main{padding:0 16px 48px;margin-top:-40px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px 22px;margin:0 0 16px}
+.card h2{font-size:20px;margin:0 0 10px;display:flex;gap:10px;align-items:baseline}
+.num{flex:none;display:inline-grid;place-items:center;width:28px;height:28px;border-radius:50%;background:var(--soft);color:var(--brand);font-size:14px;font-weight:700}
+.card h3{font-size:16px;margin:16px 0 4px}
+.card p{margin:0 0 10px}
+ul,ol{margin:0 0 10px;padding-inline-start:22px}
+li{margin:4px 0}
+.quick{background:var(--soft);border-color:transparent}
+.quick ol{font-weight:600}
+.tip{border-inline-start:3px solid var(--brand);padding:6px 12px;background:var(--soft);border-radius:0 8px 8px 0;margin:10px 0 0}
+.warn{background:var(--warn-bg);border-color:var(--warn-line)}
+dl{margin:0}
+dt{font-weight:700;margin-top:12px}
+dd{margin:2px 0 0}
+nav.toc{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 16px}
+nav.toc a{font-size:14px;text-decoration:none;background:var(--card);border:1px solid var(--line);padding:6px 12px;border-radius:999px;color:var(--ink)}
+footer{color:var(--muted);font-size:14px;text-align:center;padding:8px 16px 40px}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <div class="top">
+      <a class="home" href="../">← Green Pixel Studio</a>
+    </div>
+    <h1>How to use Paperjet</h1>
+    <p>Paperjet is a PDF toolkit for Android, iPhone and iPad. Open, convert, merge, split, sign, fill, edit and compress — everything runs on your device.</p>
+  </div>
+</header>
+<main class="wrap">
+  <div class="card quick"><h2>Quick start</h2>
+    <ol>
+      <li>Tap <strong>Open</strong> and pick a PDF, Word, Excel, PowerPoint, image, EPUB or text file.</li>
+      <li>Choose a tool from the home screen — Merge, Split, Sign, Fill, Edit, Compress or Convert.</li>
+      <li>Save the result. It stays on your phone until you share or delete it.</li>
+    </ol>
+    <p>No account, no upload. Your documents never leave the device.</p>
+  </div>
 
+  <nav class="toc">
+    <a href="#open">Open &amp; convert</a>
+    <a href="#merge">Merge</a>
+    <a href="#split">Split</a>
+    <a href="#sign">Sign</a>
+    <a href="#fill">Fill forms</a>
+    <a href="#edit">Edit pages</a>
+    <a href="#compress">Compress</a>
+    <a href="#images">Images to PDF</a>
+    <a href="#recents">Recents</a>
+    <a href="#ads">Ads &amp; privacy</a>
+    <a href="#faq">FAQ</a>
+  </nav>
+
+  <div class="card" id="open"><h2><span class="num">1</span>Open and convert files</h2>
+    <p>Paperjet opens PDFs and converts other common formats to PDF:</p>
+    <ul>
+      <li>Word (.doc, .docx), Excel (.xls, .xlsx), PowerPoint (.ppt, .pptx)</li>
+      <li>Images (JPG, PNG, HEIC and more)</li>
+      <li>EPUB and plain text</li>
+    </ul>
+    <p>Tap <strong>Open</strong>, pick the file, and Paperjet converts it on the device. The original file is left alone — the converted PDF is saved beside your other Paperjet documents.</p>
+  </div>
+
+  <div class="card" id="merge"><h2><span class="num">2</span>Merge PDFs</h2>
+    <p>Combine several PDFs into one.</p>
+    <ol>
+      <li>Tap <strong>Merge</strong>.</li>
+      <li>Add the PDFs you want to combine.</li>
+      <li>Drag to reorder, then tap <strong>Merge</strong>.</li>
+    </ol>
+    <p class="tip">The source files are not changed. The merged PDF is saved as a new file you can rename.</p>
+  </div>
+
+  <div class="card" id="split"><h2><span class="num">3</span>Split a PDF</h2>
+    <p>Break one PDF into smaller ones.</p>
+    <ul>
+      <li><strong>By range:</strong> type the page ranges you want (for example <em>1-3, 5, 8-10</em>).</li>
+      <li><strong>Every N pages:</strong> split a long PDF into equal chunks.</li>
+      <li><strong>Extract pages:</strong> pick individual pages to save as a new PDF.</li>
+    </ul>
+  </div>
+
+  <div class="card" id="sign"><h2><span class="num">4</span>Sign a PDF</h2>
+    <p>Add a signature to any page.</p>
+    <ol>
+      <li>Open the PDF and tap <strong>Sign</strong>.</li>
+      <li>Draw your signature with your finger, or import a signature image.</li>
+      <li>Drag it to the right spot and resize it. Tap <strong>Save</strong>.</li>
+    </ol>
+    <p>If you save your signature, Paperjet keeps it on your device for next time. Delete it any time from the Sign screen.</p>
+  </div>
+
+  <div class="card" id="fill"><h2><span class="num">5</span>Fill forms</h2>
+    <p>Tap a form field to type into it. Paperjet handles both interactive PDF forms and flat forms:</p>
+    <ul>
+      <li><strong>Interactive forms</strong> keep their fields when you save.</li>
+      <li><strong>Flat forms</strong> (scanned pages) let you add text, checkmarks and dates anywhere on the page.</li>
+    </ul>
+  </div>
+
+  <div class="card" id="edit"><h2><span class="num">6</span>Edit pages</h2>
+    <p>Reorganize a PDF page by page.</p>
+    <ul>
+      <li>Reorder, rotate or delete pages.</li>
+      <li>Insert blank pages or pages from another PDF.</li>
+      <li>Add text, highlights and shapes.</li>
+    </ul>
+  </div>
+
+  <div class="card" id="compress"><h2><span class="num">7</span>Compress a PDF</h2>
+    <p>Reduce the file size so it fits in email or upload limits.</p>
+    <ol>
+      <li>Tap <strong>Compress</strong> and pick a PDF.</li>
+      <li>Choose a quality level — Paperjet shows the expected size before saving.</li>
+      <li>Tap <strong>Save</strong>. The original is kept; the smaller copy is saved separately.</li>
+    </ol>
+  </div>
+
+  <div class="card" id="images"><h2><span class="num">8</span>Images to PDF</h2>
+    <p>Turn photos or scans into a single PDF.</p>
+    <ol>
+      <li>Tap <strong>Images to PDF</strong>.</li>
+      <li>Pick the pictures, drag to reorder, and choose page size.</li>
+      <li>Save. Each image becomes one page.</li>
+    </ol>
+  </div>
+
+  <div class="card" id="recents"><h2><span class="num">9</span>Recents and clearing data</h2>
+    <p>Recent documents appear on the home screen so you can jump back in.</p>
+    <ul>
+      <li><strong>Remove one:</strong> long-press a document in Recents.</li>
+      <li><strong>Clear all:</strong> tap <em>Clear</em> on the home screen.</li>
+      <li><strong>Erase everything:</strong> uninstall the app.</li>
+    </ul>
+  </div>
+
+  <div class="card" id="ads"><h2><span class="num">10</span>Ads and privacy</h2>
+    <p>Paperjet is free and shows ads from Google AdMob and Meta Audience Network. The ad providers never see your documents, signatures or form entries.</p>
+    <ul>
+      <li>In the EU, UK and Switzerland, Paperjet shows Google's consent form before any ads load. You can change your choice later with <strong>Ad privacy choices</strong> on the home screen.</li>
+      <li>On iPhone and iPad, you can refuse app tracking in the system prompt or Settings.</li>
+    </ul>
+    <p>Full details: <a href="privacy.html">Privacy policy</a>.</p>
+  </div>
+
+  <div class="card" id="faq"><h2><span class="num">11</span>FAQ</h2>
+    <dl>
+      <dt>Do I need an account?</dt>
+      <dd>No. Paperjet has no sign-up and no server.</dd>
+      <dt>Where are my files saved?</dt>
+      <dd>On your device, in Paperjet's own folder. Use Share to send them elsewhere.</dd>
+      <dt>Does Paperjet work offline?</dt>
+      <dd>Yes. Everything except ads runs offline.</dd>
+      <dt>Can I remove ads?</dt>
+      <dd>Not yet. Ads keep Paperjet free.</dd>
+      <dt>How do I contact support?</dt>
+      <dd>Email <a href="mailto:nur.uudevs@gmail.com">nur.uudevs@gmail.com</a>.</dd>
+    </dl>
+  </div>
+</main>
+<footer>© 2026 Green Pixel Studio · <a href="../">All apps</a> · <a href="privacy.html">Privacy policy</a></footer>
+</body>
+</html>
